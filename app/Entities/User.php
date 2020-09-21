@@ -20,6 +20,18 @@ class User extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['cpf', 'name', 'username','email','password','gender','birth','icon'];
+    public $timestamps = true;
 
+    public function artist(){
+        return $this->belongsToMany(Artist::class);
+    }
+
+    public function album(){
+        return $this->belongsToMany(Album::class);
+    }
+
+    public function playlist(){
+        return $this->hasMany(Playlist::class);
+    }
 }

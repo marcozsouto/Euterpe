@@ -20,6 +20,18 @@ class Music extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'time','music','description','trackNumber','streams','album_id'];
+    public $timestamps = true;
 
+    public function owner(){
+        return $this->belongsTo(Album::class);
+    }
+
+    public function artist(){
+        return $this->belongsToMany(Artist::class);
+    }
+
+    public function playlist(){
+        return $this->belongsToMany(Playlist::class);
+    }
 }

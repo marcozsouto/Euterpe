@@ -23,6 +23,7 @@ class CreateMusicTable extends Migration
 			$table->string('description', 100);
 			$table->integer('trackNumber');
 			$table->bigInteger('streams');
+			$table->unsignedInteger('album_id');
 			$table->foreign('album_id')->references('id')->on('albums');
             $table->timestamps();
 		});

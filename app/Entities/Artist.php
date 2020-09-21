@@ -20,6 +20,18 @@ class Artist extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['name','description','musicGender','icon','cover','followers'];
+    public $timestamps = true;
 
+    public function user(){
+        return $this->belongsToMany(User::class);
+    }
+
+    public function album(){
+        return $this->belongsToMany(Album::class);
+    }
+
+    public function music(){
+        return $this->belongsToMany(Music::class);
+    }
 }

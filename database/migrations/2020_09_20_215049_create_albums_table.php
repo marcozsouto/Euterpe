@@ -20,7 +20,7 @@ class CreateAlbumsTable extends Migration
 			$table->string('name',45);
 			$table->string('description', 100);
 			$table->binary('cover');
-			$table->integer('number_of_tracks');
+			$table->integer('numberOfTracks');
 			$table->string('gender', 25);
 			$table->date('releaseDate');
             $table->timestamps();

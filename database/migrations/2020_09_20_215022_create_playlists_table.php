@@ -21,6 +21,7 @@ class CreatePlaylistsTable extends Migration
 			$table->string('description', 100);
 			$table->binary('cover');
 			$table->integer('view');
+			$table->unsignedInteger('user_id');
 			$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
 		});
