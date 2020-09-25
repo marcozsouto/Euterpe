@@ -18,7 +18,7 @@ class MusicPlaylist extends Migration
             $table->unsignedInteger('playlist_id');
             $table->unsignedInteger('music_id');
             $table->foreign('playlist_id')->references('id')->on('playlists');
-			$table->foreign('music_id')->references('id')->on('musics');
+			$table->foreign('music_id')->references('id')->on('music');
             $table->timestamps();
 		});
     }
