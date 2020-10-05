@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Illuminate\Support\Facades\Schema;
 /**
  * Class CreateMusicTable.
  */
@@ -17,10 +17,10 @@ class CreateMusicTable extends Migration
 	{
 		Schema::create('music', function(Blueprint $table) {
             $table->increments('id');
-			$table->string('name',254);
+			$table->string('name',256);
 			$table->time('time');
 			$table->binary('music');
-			$table->string('description', 100);
+			$table->string('description', 256)->nullable();
 			$table->integer('trackNumber');
 			$table->bigInteger('streams');
 			$table->unsignedInteger('album_id');

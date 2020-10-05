@@ -10,19 +10,37 @@
             <div class="logo"></div>
             <div class="bar">
                 <label class='help'>
-                    {!! Form::open(['route' => 'marcos', 'method' => 'get']) !!}
-                    {!! Form::submit('Help') !!}
-                    {{ Form::close() }}
+                <a href="{{ url('/help') }}">
+                    <button>Help</button>
+                </a>
                 </label>
                 <label class='signup'>
-                    {!! Form::open(['route' => 'marcos', 'method' => 'get']) !!}
-                    {!! Form::submit('Sign Up') !!}
-                    {{ Form::close() }}
+                @if(Auth::check())
+                <a href="{{ url('/logout') }}">
+                    <button>Log out</button>
+                </a>
+                @else
+                <a href="{{ url('/signup') }}">
+                    <button>Sign Up</button>
+                </a>
+                @endif
                 </label>
                 <label class='login'>
-                    {!! Form::open(['route' => 'marcos', 'method' => 'get']) !!}
-                    {!! Form::submit('Log In') !!}
-                    {{ Form::close() }}
+                @if(Auth::check() and Auth::user()->username == "euterpe")
+                    <a href="{{ url('/euterpe') }}">
+                        <button>{{Auth::user()->name}}</button>
+                    </a>
+                @endif
+                @if(Auth::check() and Auth::user()->username != "euterpe")
+                    <a href="{{ url('/dashboard') }}">
+                        <button>{{Auth::user()->name}}</button>
+                    </a>    
+                @endif
+                @if(!Auth::check())
+                    <a href="{{ url('/login') }}">
+                        <button>Log in</button>
+                    </a>
+                @endif
                 </label>
             </div>
         </header>
@@ -41,14 +59,14 @@
             <h1>Conect to Euterpe</h1>
             <h3>Listen, stream and share your favourie artists for free.</h3>
             <label class='button1'>
-                {!! Form::open(['route' => 'marcos', 'method' => 'get']) !!}
-                {!! Form::submit('LEARN MORE') !!}
-                {{ Form::close() }}
+                <a href="{{ url('/signup') }}">
+                    <button>SIGN UP</button>
+                </a>
             </label>
             <label class='button2'>
-                {!! Form::open(['route' => 'marcos', 'method' => 'get']) !!}
-                {!! Form::submit('BUY ME A COFFE :)') !!}
-                {{ Form::close() }}
+                <a href="{{ url('/login') }}">
+                    <button>LEARN MORE</button>
+                </a>
             </label>
         </div>
         <div class="box2">

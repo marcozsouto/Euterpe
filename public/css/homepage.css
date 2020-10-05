@@ -218,7 +218,7 @@ h5{
     left: 50px;
 }
 
-label.help form input[type="submit"], label.signup form input[type="submit"], label.login form input[type="submit"]{
+label.help button, label.signup button, label.login button{
     padding: none;
     width: 70px;
     border: none;
@@ -230,33 +230,33 @@ label.help form input[type="submit"], label.signup form input[type="submit"], la
     top: 8%;
 }
 
-label.help form input[type="submit"]{
+label.help button{
     position: absolute;
     color: white;
     left: 70%;
     
 }
 
-label.signup form input[type="submit"]{
+label.signup button{
     position: absolute;
     color: gray;
     left: 75%;
     
 } 
 
-label.login form input[type="submit"]{
+label.login button{
     position: absolute;
     color: gray;
     left: 80%;
     
 }
 
-label.help form input[type="submit"]:hover, label.signup form input[type="submit"]:hover, label.login form input[type="submit"]:hover{
+label.help button:hover, label.signup button:hover, label.login button:hover{
     color: #ff7f6b;
     cursor: pointer;
 }
 
-label.button1 form input[type="submit"], label.button2 form input[type="submit"]{
+label.button1 button, label.button2 button{
     padding: 20px 30px;
     width: 230px;
     border: 2px solid currentColor;
@@ -267,7 +267,7 @@ label.button1 form input[type="submit"], label.button2 form input[type="submit"]
     line-height: 25%;
 }
 
-label.button1 form input[type="submit"]{
+label.button1 button{
     position: absolute;
     top: 53%;
     left: 50%;
@@ -275,19 +275,19 @@ label.button1 form input[type="submit"]{
     border-color: black;
 }
 
-label.button1 form input[type="submit"]:hover{
+label.button1 button:hover{
     cursor: pointer;
     background-color: black;
     color: white;
     transition: .6s;
 }
 
-label.button2 form input[type="submit"]:hover{
+label.button2 button:hover{
     cursor: pointer;
 }
 
 
-label.button2 form input[type="submit"]{
+label.button2 button{
     position: absolute;
     top: 53%;
     left: 35%;

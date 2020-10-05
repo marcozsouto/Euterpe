@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Illuminate\Support\Facades\Schema;
 /**
  * Class CreatePlaylistsTable.
  */
@@ -17,9 +17,9 @@ class CreatePlaylistsTable extends Migration
 	{
 		Schema::create('playlists', function(Blueprint $table) {
             $table->increments('id');
-			$table->string('name',45);
-			$table->string('description', 100);
-			$table->binary('cover');
+			$table->string('name',256);
+			$table->string('description', 256);
+			$table->binary('icon');
 			$table->integer('view');
 			$table->unsignedInteger('user_id');
 			$table->foreign('user_id')->references('id')->on('users');
