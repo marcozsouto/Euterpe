@@ -56,14 +56,14 @@ class ArtistValidator extends LaravelValidator
                 'cover.image' =>'Your file must be a image');
 
             $validator_image = Validator::make($fileArray, $rules);  
-            if(!$validator_image->errors()->isEmpty()){
+            if(!$validator_image->errors()->isEmpty()){      
                 $validator->errors()->add('icon', "Your images must be a jpeg/jpg file with radio 1/1 and dimension of 640 x 640(icon) and minimum of 1280 x 720(cover)");
             }
         }else{
-            if(array_key_exists('icon', $data))
-                $validator->errors()->add('cover', "Your cover must exist");
-            if(array_key_exists('cover', $data))
-                $validator->errors()->add('icon', "Your icon must exist");
+            if(!array_key_exists('icon', $data))
+                $validator->errors()->add('cover', "Your icon must exist");
+            if(!array_key_exists('cover', $data))
+                $validator->errors()->add('icon', "Your cover must exist");
             else{
                 $validator->errors()->add('icon', "Your icon must exist");
                 $validator->errors()->add('cover', "Your cover must exist");

@@ -30,6 +30,5 @@ class UserSeeder extends Seeder
             'icon'=> 'public/storage/admin.jpg'
         ]);
         
-        User::factory()->count(5)->create();
     }
 }

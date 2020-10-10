@@ -26,8 +26,11 @@ class AuthController extends Controller
         ];
         if(Auth::attempt($credentials) and Auth::user()->username == "euterpe"){
             return redirect()->route("euterpe");
-        }else{
+        }
+        if(Auth::attempt($credentials)){
             return redirect()->route("home");
+        }else{
+            return redirect()->route("login");
         }
         
    
@@ -38,7 +41,7 @@ class AuthController extends Controller
 
     function logout(){
         Auth::logout();
-        return redirect()->route("home");
+        return redirect()->route("welcome");
     }
 
     function signup(Request $request){
@@ -70,7 +73,7 @@ class AuthController extends Controller
             return redirect()->route("home");
             
         }catch(ValidationException $exception){
-            return redirect('signup')->withErrors($exception->getValidator())->withInput();
+            return redirect('/signup')->withErrors($exception->getValidator())->withInput();
         }
 
     }

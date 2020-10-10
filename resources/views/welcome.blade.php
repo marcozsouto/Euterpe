@@ -2,7 +2,7 @@
 <html >
     <head>
         <title>Music for Everyone - Euterpe</title>
-        <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/welcomepage.css') }}">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -28,12 +28,12 @@
                 <label class='login'>
                 @if(Auth::check() and Auth::user()->username == "euterpe")
                     <a href="{{ url('/euterpe') }}">
-                        <button>{{Auth::user()->name}}</button>
+                        <button>{{Auth::user()->firstName()}}</button>
                     </a>
                 @endif
                 @if(Auth::check() and Auth::user()->username != "euterpe")
-                    <a href="{{ url('/dashboard') }}">
-                        <button>{{Auth::user()->name}}</button>
+                    <a href="{{ url('/foryou') }}">
+                        <button>{{Auth::user()->firstName()}}</button>
                     </a>    
                 @endif
                 @if(!Auth::check())

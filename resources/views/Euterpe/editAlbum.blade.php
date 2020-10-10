@@ -16,28 +16,31 @@
                 @endforeach
             </div>
         @endif
-        <form action="{{route('euterpe.album.new.do')}}" method='post' enctype="multipart/form-data" id="form">
+        <form action="{{route('euterpe.album.edit.do')}}" method='post' enctype="multipart/form-data" id="form">
         @csrf
             <label for="name">name</label></br>
-            <input type="text" name="name"/>    
+            <input type="text" name="name" value="{{$album->name}}"/>    
         </br>
             <label for="description">description</label></br>
-            <textarea rows="4" cols="50" name="description" form="form"></textarea>         
-        </br>        
+            <textarea id='textare' rows="4" cols="50" name="description" form="form"></textarea>         
         </br>
             <label for="icon">icon</label></br>
             <input type="file" name="icon" id="icon"/>   
         </br>
             <label for="gender">gender</label></br>
-            <input type="text" name="gender"/>    
+            <input type="text" name="gender" value="{{$album->gender}}"/>    
         </br>
             <label for="releaseDate">Release Date</label></br>
-            <input type="date" name="releaseDate"/>     
+            <input type="date" name="releaseDate" value="{{$album->releaseDate}}"/>     
         </br>
             <label for="artist_id">Artist</label></br>    
             <select id="artist_id" name="artist_id" style="width: 200px">
-                @foreach($artists as $artist)
-                    <option value="{{$artist->id}}">{{$artist->name}}</option>
+                @foreach($artists as $a)
+                    @if($a->id == $album->artist_id)
+                        <option value="{{$a->id}}" selected>{{$a->name}}</option>
+                    @else
+                    <option value="{{$a->id}}">{{$a->name}}</option>
+                    @endif
                 @endforeach
             </select>  
             </br>
@@ -62,10 +65,10 @@
 
                 function dynamic_field(number){
                     var html = '<tr>';
-                    html += '<td><input type="text" name="music_name['+ number +']"</td>';
-                    html += '<td><input type="time" name="music_time['+ number +']"</td>';
-                    html += '<td><input type="file" name="music_file['+ number +']"</td>';
-                    html += '<td><input type="text" name="music_description['+ number +']"</td>';
+                    html += '<td><input type="text" name="music_name['+ number +']" value="{{$musics[0]->name}}" </td>';
+                    html += '<td><input type="time" name="music_time['+ number +']" value ="{{$musics[0]->time}}"</td>';
+                    html += '<td><input type="file" name="music_file['+ number +']" value ="{{$musics[0]->file}}"</td>';
+                    html += '<td><input type="text" name="music_description['+ number +']" value="{{$musics[0]->description}}"</td>';
                     if(number > 1)
                     {
                         html += '<td><button type="button" name = "remove" id = "" class="btn btn-danger remove">Remove</button></td></tr>'; 
@@ -77,7 +80,10 @@
                         $('tbody').html(html);
                     }
                 }
-
+                for(i =0; i<={{$album->numberOfTracks}}; i++){
+                    dynamic_field(i);
+                }
+                
                 $(document).on('click', '#add', function(){
                     count++;
                     dynamic_field(count);
@@ -87,7 +93,7 @@
                     count--;
                     $(this).closest("tr").remove();
                 });
-
+                
             });
 
             
@@ -95,6 +101,13 @@
         <script>
             $("#artist_id").select2();
         </script>
+        <script>
+            $("#textare").text("{{$album->description}}");
+        </script>
+        <script>
+            
+        </script>
+
         </form>
     </body>
 </html>

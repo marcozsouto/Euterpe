@@ -73,4 +73,9 @@ class User extends Authenticatable
     public function playlist(){
         return $this->hasMany(Playlist::class);
     }
+
+    public function firstName(){
+        $firstname = explode(' ',trim($this->name));        
+        return $firstname[0];
+    }
 }

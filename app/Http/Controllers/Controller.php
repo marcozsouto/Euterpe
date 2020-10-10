@@ -14,7 +14,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function homepage(){
+    function welcomepage(){
        return view('welcome');
     }
 
@@ -25,26 +25,5 @@ class Controller extends BaseController
     function form_signup(){
         return view('signup');
     }
-
-    function euterpe_dashboard(){
-        return view('euterpe.dashboard');
-    }
-
-    function form_album(){
-        $this->authorize("create", User::class);
-        return view('euterpe.createAlbum');
-        
-    }
-
-    function form_artist(){
-        $this->authorize("create", User::class);
-        return view('euterpe.createArtist');
-       
-    }
-
-    function form_euterpe_playlist(){
-        $this->authorize("create", User::class);
-        return view('euterpe.createArtist');
-        
-    }
+    
 }

@@ -26,7 +26,7 @@ class AlbumFactory extends Factory
         return [
             'name' => $this->faker->text($maxNbChars = 45),
             'description' => $this->faker->text($maxNbChars = 256),
-            'icon' => $this->faker->image($dir = 'C:/Users/Marcos/Pictures/icon',  640, 640, null, false),
+            'icon' => $this->faker->imageUrl($width = 640, $height = 640),
             'numberOfTracks' => $this->faker->randomDigitNotNull,
             'gender' => $this->faker->randomElement($array = array ('pop', 'rap', 'folk', 'k-pop','rock','country','r&b','jazz',' EDM')),
             'releaseDate' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
