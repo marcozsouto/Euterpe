@@ -3,7 +3,7 @@
     <head>
         <title>Music for Everyone - Euterpe</title>
         <link rel="stylesheet" href="{{ asset('css/welcomepage.css') }}">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -72,7 +72,7 @@
         <div class="box2">
             <h2>Why join us?</h2>
             <h4>Play any song from your favourite artists</h4>
-            <div align="center">
+            <div class="photos" align="center">
                 <div class = "a">
                     <div class="container">    
                         <img src="{{ asset('css/img/ariana.jpg') }}">

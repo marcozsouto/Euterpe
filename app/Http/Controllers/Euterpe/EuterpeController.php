@@ -49,16 +49,25 @@ class EuterpeController extends Controller
     function album_image($id){
         $this->authorize("create", User::class);
         $data = Album::find($id);
+        $image = Image::make($data->icon)->encode('jpeg');
+        $response = Response::make($image->encode('jpeg'));
+        $response->header('Content-Type', 'image/jpeg');
+        return $response;
+    }
+
+    function artist_icon($id){
+        $this->authorize("create", User::class);
+        $data = Artist::find($id);
         $image = Image::make($data->icon);
         $response = Response::make($image->encode('jpeg'));
         $response->header('Content-Type', 'image/jpeg');
         return $response;
     }
 
-    function artist_image($id){
+    function artist_cover($id){
         $this->authorize("create", User::class);
         $data = Artist::find($id);
-        $image = Image::make($data->icon);
+        $image = Image::make($data->cover);
         $response = Response::make($image->encode('jpeg'));
         $response->header('Content-Type', 'image/jpeg');
         return $response;

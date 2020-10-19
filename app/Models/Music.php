@@ -43,9 +43,12 @@ class Music extends Model implements Transformable
         'streams.*'=>"Unexpected Error MS08: Please contact our support.",
         'album_id.*'=>"Unexpected Error MS09: Please contact our support."
     ];
-    public $timestamMS = true;
+    public $timestamps = true;
 
-    public function owner(){
+
+    protected $with = ['album'];
+    
+    public function album(){
         return $this->belongsTo(Album::class);
     }
 

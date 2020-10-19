@@ -19,7 +19,7 @@ class CreateAlbumsTable extends Migration
             $table->increments('id');
 			$table->string('name',100);
 			$table->string('description', 256)->nullable();
-			$table->binary('icon');
+			$table->string('icon');
 			$table->integer('numberOfTracks');
 			$table->string('gender', 25);
 			$table->date('releaseDate');

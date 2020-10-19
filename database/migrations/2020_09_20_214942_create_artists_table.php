@@ -20,8 +20,8 @@ class CreateArtistsTable extends Migration
 			$table->string('name',45);
 			$table->string('description', 256)->nullable();
 			$table->string('musicGender', 25);
-			$table->binary('icon');
-			$table->binary('cover');
+			$table->string('icon');
+			$table->string('cover');
 			$table->integer('followers');
             $table->timestamps();
 		});

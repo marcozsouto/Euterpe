@@ -21,7 +21,7 @@ class Artist extends Model implements Transformable
      * @var array
      */
     protected $fillable = ['name','description','musicGender','icon','cover','followers'];
-
+    protected $table = "artists";
     public static $rules = [
         'name' =>'required|min:1|max:45',
         'description'=>'max:256',

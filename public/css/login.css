@@ -1,0 +1,167 @@
+div.box2{
+    background-color: #141414;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+form{
+    background-color: transparent;
+    width: 23%;
+    height: 30%;
+    position: absolute;
+    right: 38%;
+    top: 15%;
+}
+
+label{
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    left: 0;
+}
+
+label.username{
+    top: 0;
+}
+
+label.password{
+    top: 39%;
+}
+
+input[type=text], input[type=password]{
+    position: absolute;
+    border: 1px solid #272727;
+    border-radius: 8px;
+    width:  400px;
+    height: 20px;
+    padding: 10px 20px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 500;
+    left: 0;
+    background-color: #272727;
+    color: white;
+}
+input[type=text]:focus, input[type=password]:focus, button:focus,  input[type=submit]:focus{
+    outline: none;
+}
+  
+input[type=text]{
+    top: 11%;
+    
+}
+
+input[type=password]{
+    top: 50%;
+}
+
+input[type=submit]{
+    position: absolute;
+    float: left;
+    display: block;
+    bottom: 0;
+    right: 50px;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    border: 1px solid #2D2D2D;
+    border-radius: 10px;
+    background: #2D2D2D;
+    font: 1em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white
+}
+
+input[type=submit]:hover{
+    border: 1px solid #F05E54;
+    background: #F05E54;
+    cursor: pointer;
+}
+
+
+div.container{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    background-color: #141414;
+}
+
+img{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    margin-left: 5px;
+    top: -12%;
+    left: 1.5%;
+}
+
+div.overlay{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    background: 
+        linear-gradient(to bottom, rgba(20,20,20,0.50) 0%, rgba(20, 20, 20, 1) 100%);
+}
+
+h1{
+    font: 1.7em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    left: 47.5%;
+    top: 2%;
+    z-index: 1;
+}
+
+h2{
+    font: 1.3em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    left: 43.9%;
+    top: 50%;
+    z-index: 1;
+}
+
+button{
+    position: absolute;
+    left: 39%;
+    top: 60%;
+    padding: 20px 30px;
+    width: 430px;
+    border: 2px solid currentColor;
+    border-color: #2D2D2D;
+    border-radius: 10px;
+    font: 0.9em 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 700;
+    height: 45px;
+    text-align: center;
+    line-height: 25%;
+    background-color: #2D2D2D;
+    cursor: pointer;
+}
+
+button:hover{
+    border: 2px solid #1EB1EB;
+    background: #1EB1EB;
+    cursor: pointer;
+}
+
+div.line{
+    border-bottom: 0.1px solid #363636;
+    border-top: 0;
+    position: absolute;
+    width:  100%;
+    left:  0;
+    bottom: -5%;
+    z-index: 4;
+}

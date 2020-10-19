@@ -46,20 +46,24 @@ class AuthController extends Controller
 
     function signup(Request $request){
         try{
+            if(strlen($request->day) == 1){
+                $request['day'] = '0'.$request['day'];
+            }
+            $birth = $request['year'].'-'.$request['month'].'-'.$request['day'];
+            $request->request->add(['birth' => $birth]);
             //validating album data
             UserValidator::validate($request);
             
             //seting data
             $data = $request->all();
-
+            
             $user['name'] = $data['name'];  
             $user['username'] = $data['username'];
             $user['email'] = $data['email'];
             $user['password'] = Hash::make($data['password']);
             $user['gender'] = $data['gender']; 
-            $user['birth'] = $data['birth']; 
+            $user['birth'] = $birth;
             $user['icon'] = $data['icon']; 
-
             //creating album
             $user = User::create($user);
 

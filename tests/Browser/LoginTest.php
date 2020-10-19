@@ -20,7 +20,7 @@ class LoginTest extends DuskTestCase
         $this->browse(function (Browser $browser) use ($user) {
             $browser->visit('/login')
             ->type("username", $user->username)
-            ->type)("password", $user->password);
+            ->type("password", $user->password);
             
         });
     }

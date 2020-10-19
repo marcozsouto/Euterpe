@@ -1,0 +1,340 @@
+.box-midle{
+    background-color: #141414;
+    width: 23%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+}
+
+.box-right{
+    background: 
+        linear-gradient(to left, rgba(20,20,20,0.50) 0%, rgba(20, 20, 20, 1) 100%);
+    width: 27%;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+div.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("img/signup-background.jpg");
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+    z-index: -1;
+    animation: animatedBackground 500s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -10000px 0;
+    }
+  }
+
+.box-left{
+    background: 
+    linear-gradient(to right, rgba(20,20,20,0.50) 0%, rgba(20, 20, 20, 1) 100%);
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
+form{
+    background-color: transparent;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    left: 0%;
+    top: 15%;
+    overflow: hidden;
+}
+
+label{
+    font: 0.85em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    left: 0;
+}
+
+label.icon-text{
+    top: 5%;
+}
+
+label.name{
+    top: 22%;
+}
+
+label.email{
+    top: 33%;
+}
+
+label.username{
+    top: 44%;
+}
+
+label.password{
+    top: 55%;
+}
+
+label.birthdate{
+    top: 67%;
+}
+
+label.gender{
+    top: 80%;
+}
+
+label.male, label.female, label.other{
+    position: absolute;
+    top: 85.4%;
+    font: 0.82em 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+    label.male{
+        left: 5.7%;
+    }
+
+    label.female{
+        left: 23.7%;
+    }
+
+    label.other{
+        left: 45.7%;
+    }
+
+label.day, label.month, label.year{
+    position: absolute;
+    top: 70.3%;
+    font: 0.82em 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+    label.day{
+        left: 0%;
+    }
+
+    label.month{
+        left: 20%;
+    }
+
+    label.year{
+        left: 55%;
+    }
+
+input[type=radio]{
+    position: absolute;
+    top: 85%;
+
+}
+
+input[type=text], input[type=password]{
+    position: absolute;
+    border: 1px solid #2D2D2D;
+    border-radius: 8px;
+    height: 20px;
+    padding: 10px 20px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: white;
+    color: white;
+    background: #2D2D2D;
+}
+
+.name{
+    top: 26%;
+    width:  400px;
+    left: 0;   
+}
+
+.email{
+    top: 37%;
+    width:  400px;
+    left: 0;
+}
+
+.username{
+    top: 48%;
+    width:  400px;
+    left: 0;   
+}
+
+input[type=password]{
+    top: 59%;
+    width:  400px;
+    left: 0;
+}
+
+
+.male{
+    left: 0;
+}
+
+.female{
+    left: 18%;
+}
+
+.other{
+    left: 40%;
+}
+
+.day{
+    top: 73%;
+    width: 30px;
+}
+
+.year{
+    top: 73%;
+    width: 40px;
+    left: 55%;
+}
+
+select{
+    position: absolute;
+    top: 73%;
+    width: 140px;
+    left: 20%;
+    position: absolute;
+    border: 1px solid #2D2D2D;
+    border-radius: 8px;
+    height: 40px;
+    padding: 10px 20px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: white;
+    background: #2D2D2D;
+    color: white;
+}
+
+option{
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: white;
+    color: black;
+}
+
+input[type=text]:focus, input[type=password]:focus,  input[type=submit]:focus, select{
+    outline: none;
+}
+
+input[type=submit]{
+    position: absolute;
+    float: left;
+    display: block;
+    bottom: 0;
+    right: 0;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #2D2D2D;
+    border-radius: 10px;
+    background: #2D2D2D;
+    font: 1em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    bottom: 2%; 
+}
+
+input[type=submit]:hover{
+    border: 1px solid #F05E54;
+    background: #F05E54;
+    cursor: pointer;
+}
+
+input[type='radio']:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    background-color: white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+input[type='radio']:checked:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    background-color: #F05E54;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+img.icon{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 0;
+    border-radius: 50%;
+    top: 8%;
+    left: 0%;
+    background-color: #272727;
+}
+
+input[type=file] {
+    display: none;
+}
+
+div.overlay{
+    position: absolute;
+    opacity: 0;
+    width: 100px;
+    height: 100px; 
+    top: 8%;
+    left: 0%;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all .3s ease;    
+}
+
+div.overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+       
+}
+
+label.icon{
+    color:  white;
+    position: absolute;
+    top: 45%;
+    left: 36%;
+    cursor: pointer;
+} 
+
+h1{
+    position: absolute;
+    font: 1.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    width: 100%;
+    top: 10%;
+    
+}
+
+div.line{
+    border-bottom: 0.1px solid #363636;
+    border-top: 0;
+    position: absolute;
+    width:  100%;
+    left:  0;
+    top: 3%;
+    z-index: 4;
+}

@@ -1,0 +1,339 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+           -box-sizing: border-box;
+    background-color: #141414;
+}
+
+img.icon{
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px; 
+    margin-top:15px; 
+    margin-left:11px;
+    border-radius: 10px;
+    top: 0%;
+    left: 0%;
+    padding: 0;
+    background-color:  #272727;
+    background-size: 100%;
+}
+
+div.overlay{
+    position: absolute;
+    opacity: 0;
+    width: 100px;
+    height: 100px; 
+    top: 1.5%;
+    left: 2.6%;
+    border-radius: 10px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all .3s ease;    
+}
+
+label.icon{
+    top: 43%;
+    left: 33%;
+    z-index: 5;
+    color:transparent;
+}
+
+div.overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+       
+}
+
+label.icon{
+    color:  white;
+} 
+
+form{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+label{
+    width: 250px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    left: 1.3%;
+    text-align: left;
+}
+
+label.name{
+    top: 13%;
+}
+
+label.description{
+    top: 17%;
+}
+
+label.gender{
+    top: 18%;
+}
+
+label.releaseDate{
+    top: 22.5%;
+}
+
+label.artist{
+    top: 28.5%;
+}
+
+input[type=text]{
+    position: absolute;
+    background: #272727;
+    border: 1px solid #272727;
+    border-radius: 8px;
+    width:  400px;
+    height: 30px;
+    padding: 12px 20px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    left: 1%;
+}
+
+textarea {
+    position: relative;
+    background: #272727;
+    width: 400px;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 4px;
+    background: #272727;
+    resize: none;
+    top: 18%;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    left: 1%;
+}
+
+input[type=text].name{
+    top: 15%;
+}
+input[type=text].gender{
+    top: 35%;
+}
+
+input[type=date].releaseDate{
+    position: absolute;
+    background: #272727;
+    border: 1px solid #272727;
+    border-radius: 8px;
+    width:  200px;
+    height: 30px;
+    padding: 12px 20px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    left: 1%;
+    top: 41%;
+}
+
+input[type=submit] {
+    position: absolute;
+    float: left;
+    display: block;
+    top: 55%;
+    left: 72%;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 15px;
+    background: #272727;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+input[type=submit].edit{
+    position: absolute;
+    float: left;
+    display: block;
+    top: 55%;
+    left: 77%;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 15px;
+    background: #272727;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+input[type=submit]:hover{
+    transition: 0.4ms;
+    border: 1px solid #F05E54;
+    background: #F05E54;
+    cursor: pointer;
+}
+
+
+.hide {
+    display: none;
+    float: left;
+}
+
+input[type=file] {
+    display: none;
+}
+
+
+select{
+    position: relative;
+    float: left;
+    display: block;
+    top: 29%;
+    left: 1%;
+    padding: 7px 20px;
+    width: 400px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 15px;
+    background-color: #272727;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+div.data{
+    position: absolute;
+    width: 420px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: #000000;
+    z-index: 0;
+}
+
+table{
+    position: relative;
+    top: 0%;
+    left: 430px;
+    width: 1000px;
+}
+
+
+th{
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: left;
+}
+
+td{
+    height: 40px;
+}
+
+input.music_name, input.music_description{
+    position: relative;
+    background: #272727;
+    border: 1px solid #272727;
+    border-radius: 8px;
+    width:  300px;
+    height: 25px;
+    padding: 12px 20px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    top: 2%;
+}
+
+input.music_name{
+    left: 0;
+
+}
+
+input.music_description{
+    left: 0%;
+}
+
+#music_file{
+    display: none;
+  }
+
+label.music_file{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    background-color: transparent;
+    top: 2%;
+    right: 20%;
+    display: inline-block;
+    background-image: url("img/documento.svg");
+    cursor: pointer;
+}
+
+button.add, button.remove{
+    position: relative;
+    float: left;
+    display: block;
+    top: 0%;
+    left: 0%;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 15px;
+    background: #272727;
+    font: 0.7em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+button.add:hover{
+    transition: 0.4ms;
+    border: 1px solid #F05E54;
+    background: #F05E54;
+    cursor: pointer;
+}
+
+button.remove:hover{
+    transition: 0.4ms;
+    border: 1px solid #FAC748;
+    background: #FAC748;
+    cursor: pointer;
+}
+
+.button{
+    position: absolute;
+    float: left;
+    display: block;
+    top: 55%;
+    left: 2%;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 15px;
+    background: #272727;
+    font: 0.9em 'Montserrat', sans-serif;
+    color: white;
+}
+
+.button:hover{
+    transition: 0.4ms;
+    border: 1px solid #FAC748;
+    background: #FAC748;
+    cursor: pointer;
+}

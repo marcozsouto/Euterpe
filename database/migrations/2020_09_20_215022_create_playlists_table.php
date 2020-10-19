@@ -19,7 +19,7 @@ class CreatePlaylistsTable extends Migration
             $table->increments('id');
 			$table->string('name',256);
 			$table->string('description', 256);
-			$table->binary('icon');
+			$table->string('icon');
 			$table->integer('view');
 			$table->unsignedInteger('user_id');
 			$table->foreign('user_id')->references('id')->on('users');

@@ -19,7 +19,7 @@ class CreateMusicTable extends Migration
             $table->increments('id');
 			$table->string('name',256);
 			$table->time('time');
-			$table->binary('music');
+			$table->string('music');
 			$table->string('description', 256)->nullable();
 			$table->integer('trackNumber');
 			$table->bigInteger('streams');

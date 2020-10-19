@@ -1,0 +1,199 @@
+div.sidebar{
+    position: absolute;
+    width: 280px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: #000000;
+    z-index: 5;
+}
+
+.artist-create, .artist-btm, .album-create, .album-btm, .playlist-create, .playlist-btm{
+    position: absolute;
+    width: 240px;
+    height: 30px;
+    background-size: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+    text-align: left;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding:  0.5em;
+}
+
+.artist-btm{
+    top: 17%;
+    right: 30px;
+    color: #5E5E5E;
+}
+
+.artist-create{
+    top: 20%;
+    right: 30px;
+    color: #5E5E5E;
+    padding-left: 1.5em;
+}
+
+.album-btm{
+    top: 28%;
+    right: 30px;
+    color: #5E5E5E;
+}
+
+.album-create{
+    top: 31%;
+    right: 30px;
+    color: #5E5E5E;
+    padding-left: 1.5em;
+}
+
+.playlist-btm{
+    top: 38%;
+    right: 30px;
+    color: #5E5E5E;
+}
+
+.playlist-create{
+    top: 41%;
+    right: 30px;
+    color: #5E5E5E;
+    padding-left: 1.5em;
+}
+
+
+.album-btm:hover, .playlist-btm:hover, .artist-btm:hover, .album-create:hover, .artist-create:hover, .playlist-create:hover{
+    background-color: rgba(192,192,192, 0.4);
+    color: white;
+    cursor: pointer;
+    transition: 50ms;
+}
+
+.search_sidebar::placeholder {
+    font-family: 0.9em 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+input[type=text].search_sidebar{
+    position: absolute;
+    background: #272727;
+    border: 1px solid #272727;
+    border-radius: 8px;
+    width:  240px;
+    right: 30px;
+    top: 12%;
+    padding: 12px 10px;
+    height: 40px;
+    font: 0.9em 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 500;
+    height: 35px;
+}
+
+input[type=text].search_sidebar:hover{
+    cursor: pointer;
+    
+}
+
+.content{
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: calc(100% - 280px);
+    background-color: #141414;
+    height: calc(100% - 90px);
+    display: none;
+}
+
+.content-active{  
+  display: inline;
+  z-index: 2;
+}
+
+div.slides{
+    position: relative;
+    top: 9%;
+    left: 2%;
+    width: 1570px;
+    height: 70px;
+}
+
+p.s{
+    position: relative;
+    font: 2.5em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 2.0%;
+    text-align: left;
+    background: none;
+    color: white;
+    width: 190px;
+    top: 7%;
+    
+}
+
+p.songs{
+    position: relative;
+    font: 1.5em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 2.0%;
+    text-align: left;
+    background: none;
+    color: #E0E0E0;
+    width: 190px;
+    top: 8%;
+    
+}
+
+div.line{
+    border-bottom: 0.1px solid #363636;
+    border-top: 0;
+    position: relative;
+    width:  100%;
+    right:  0%;
+    top: 0%;
+    
+}
+
+h2.name{
+    position: relative;
+    font: 1em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 6%;
+    text-align: left;
+    background: none;
+    color: #D3D3D3;
+    width: 400px;
+    top: 10%;
+}
+
+h2.error{
+    width: 800px;
+    font: 2.6em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #9C9C9C;
+    text-align: left;
+    position: relative;
+    left: 500px;
+    top: 250px;
+}
+
+h3{
+    position: relative;
+    font: 0.6em 'Montserrat', sans-serif;
+    font-weight: 600;
+    left: 6.2%;
+    text-align: left;
+    background: none;
+    color: #888888;
+    width: 400px;
+    top: -75%;
+}
+
+img.icon-music{
+    position: relative; 
+    width: 60px;
+    height: 60px; 
+    border-radius: 5px;
+    top: -20%;
+    left: 0.5%;
+}

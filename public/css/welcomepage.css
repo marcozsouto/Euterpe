@@ -27,7 +27,7 @@
     background-color: transparent;
     bottom: -300px;
     animation: square 20s infinite;
-    border: 4px  solid #ff7f6b;
+    border: 4px  solid #F05E54;
     z-index: 0;
 }
 
@@ -112,7 +112,7 @@ div.box1{
 }
 
 div.box2{
-    background-color: #ff7f6b;
+    background-color: #F05E54;
     position: absolute;
     left: 0;
     top: calc(100% - 0px);
@@ -131,17 +131,24 @@ div.box3{
     z-index: 0;
 }
 
+div.photos{
+    position: absolute;
+    top: 20%;
+    left: 7%;
+}
+
 img{
-   width: 250px;
-   height: 250px; 
+   width: 300px;
+   height: 300px; 
    margin-top:15px; 
    margin-left:15px;
+   border-radius: 10px;
 }
 
 .container{
     position: relative;
-    width: 265px;
-    height: 265px;
+    width: 320px;
+    height: 305px;
     display: inline-block;
 }
 
@@ -150,10 +157,11 @@ img{
     transition: all .3s ease;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    width: 250px;
-    height: 250px; 
+    width: 300px;
+    height: 300px; 
     top: 15px;
-    left: 15px;
+    left: 17.5px;
+    border-radius: 10px;
 }
 
 .container:hover .overlay{
@@ -163,6 +171,7 @@ img{
 .text{
     color: white;
     font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -180,6 +189,7 @@ div.b{
 
 h1{
     font: 7em 'Montserrat', sans-serif;
+    font-weight: 700;
     text-align: center;
     position: relative;
     top: 30%;
@@ -188,16 +198,18 @@ h1{
 
 
 h2{
-    font: 3em 'Montserrat', sans-serif;
+    font: 4em 'Montserrat', sans-serif;
+    font-weight: 700;
     text-align: center;
     position: relative;
-    top: 1.5%;
+    top: 8%;
     z-index: 1;
     
 }
 
 h3{
     font: 1.5em 'Montserrat', sans-serif;
+    font-weight: 700;
     text-align: center;
     position: relative;
     top: 30%;
@@ -206,9 +218,10 @@ h3{
 
 h4{
     font: 1.1em 'Montserrat', sans-serif;
+    font-weight: 700;
     text-align: center;
     position: relative;
-    top: 2%;
+    top: 8.5%;
     z-index: 1;
 }
 
@@ -223,6 +236,7 @@ label.help button, label.signup button, label.login button{
     width: 70px;
     border: none;
     font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
     height: 70px;
     text-align: center;
     line-height: 25%;
@@ -252,7 +266,7 @@ label.login button{
 }
 
 label.help button:hover, label.signup button:hover, label.login button:hover{
-    color: #ff7f6b;
+    color: #F05E54;
     cursor: pointer;
 }
 
@@ -262,6 +276,7 @@ label.button1 button, label.button2 button{
     border: 2px solid currentColor;
     border-radius: 30px;
     font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
     height: 45px;
     text-align: center;
     line-height: 25%;

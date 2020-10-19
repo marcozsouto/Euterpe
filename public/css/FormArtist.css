@@ -1,0 +1,265 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+           -box-sizing: border-box;
+    background-color: #141414;
+}
+
+div.cover-right:before {
+    position:absolute;
+    top:0;
+    left: 1033px;
+    background: 
+        linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(20, 20, 20, 1) 100%);
+    width: 750px;
+    height: 450px;
+    content: '';
+    z-index: 2;
+    top:0;
+}
+
+div.cover-bottom:before {
+    position:absolute;
+    top:350px;
+    left: 350px;
+    background: 
+        linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(20, 20, 20, 1) 100%);
+    width: calc(100% - 700px);
+    height: 100px;
+    content: '';
+    z-index: 2;
+    top:1;
+}
+
+
+div.cover-left:before {
+    position:absolute;
+    top:0;
+    left: 350px;
+    background: 
+        linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(20, 20, 20, 1) 100%);
+    width: 750px;
+    height: 450px;
+    content: '';
+    z-index: 2;
+    top:0;
+}
+
+img.cover{
+    position: absolute;
+    width: calc(100% - 700px);
+    height: 450px;
+    object-fit: cover;
+    z-index: 0;
+    right: 350px;
+    top:0;
+
+}
+
+img.icon{
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px; 
+    margin-top:15px; 
+    margin-left:35px;
+    border-radius: 100%;
+    top: 45%;
+    left: 43%;
+    padding: 0;
+    background-color:  #272727;
+    background-size: 100%;
+}
+
+div.overlay{
+    position: absolute;
+    opacity: 0;
+    width: 100px;
+    height: 100px; 
+    top: 46.5%;
+    left: 44.85%;
+    border-radius: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all .3s ease;    
+}
+
+label.cover{
+    position: absolute;
+    left: 75%;
+    top: 43%;
+    z-index: 3;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-image: url("img/edit.svg");
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    background-color: transparent;
+}
+
+label.icon{
+    top: 43%;
+    left: 33%;
+    z-index: 5;
+    color:transparent;
+}
+
+div.overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+       
+}
+
+label.icon{
+    color:  white;
+} 
+
+form{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+label{
+    width: 250px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    left: 40%;
+    text-align: left;
+}
+
+label.name{
+    top: 55%;
+}
+
+label.description{
+    top: 57.4%;
+}
+
+label.musicGender{
+    top: 58.5%;
+}
+
+
+input[type=text]{
+    position: absolute;
+    background: #272727;
+    border: 1px solid #272727;
+    border-radius: 8px;
+    width:  400px;
+    height: 30px;
+    padding: 12px 20px;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    left: 39.5%;
+}
+
+textarea {
+    position: relative;
+    background: #272727;
+    width: 400px;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 4px;
+    background: #272727;
+    resize: none;
+    top: 58%;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    left: 39.5%;
+}
+
+input[type=text].name{
+    top: 59%;
+}
+input[type=text].musicGender{
+    top: 79%;
+}
+
+input[type=submit] {
+    position: relative;
+    float: left;
+    display: block;
+    top: 64%;
+    left: 56.5%;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 15px;
+    background: #272727;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+input[type=submit]:hover{
+    transition: 0.4ms;
+    border: 1px solid #F05E54;
+    background: #F05E54;
+    cursor: pointer;
+}
+
+.button:hover{
+    transition: 0.4ms;
+    border: 1px solid #FAC748;
+    background: #FAC748;
+    cursor: pointer;
+}
+
+
+p{
+    position: absolute;
+    z-index: 5;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: red;
+    top: 50%;
+    left: 50%;
+}
+.button{
+    position: relative;
+    float: left;
+    display: block;
+    top: 64%;
+    left: 35.6%;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    border: 1px solid #272727;
+    border-radius: 15px;
+    background: #272727;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.hide {
+    display: none;
+    float: left;
+}
+
+.hide-1 {
+    display: none;
+    float: left;
+}
+
+input[type=file] {
+    display: none;
+}
+

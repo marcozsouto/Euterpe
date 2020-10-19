@@ -36,5 +36,51 @@ class PlaylistController extends Controller
         return view('euterpe.playlist',['playlists' => $playlists]);
     }
 
+    function form_playlist_edit($id){
+        $this->authorize("create", User::class);
+        $playlist = Playlist::find($id);
+        return view('euterpe.editPlaylist',['playlist' => $playlist]);
+        
+    }
+
+    public function edit(Request $request){
+        $this->authorize("create", User::class);
+        return dd($request);
+        $playlist = Playlist::find($request->id);
+        
+                 
+    }
+
+    function form_euterpe_playlist_new(){
+        $this->authorize("create", User::class);
+        return view('euterpe.createPlaylist');
+        
+    }
+
+    public function create(Request $request){
+        try{    
+            $this->authorize("create", User::class);
+            
+            //seting data
+            $playlist = $request->all();
+            $playlist['view'] = 0;
+            $playlist['user_id'] = Auth::user()->id;
+
+            //validating playlist data
+            PlaylistValidator::validate($playlist);
+            
+            //creating image
+            $icon = Image::make($playlist['icon']);
+            Response::make($icon->encode('jpeg'));
+            $playlist["icon"]  = $icon;
+            
+            //creating playlist
+            Playlist::create($playlist);
+
+        }catch(ValidationException $exception){
+            return redirect('euterpe/playlist/new')->withErrors($exception->getValidator())->withInput();
+        }
+
+    }
  
 }
