@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
-
+@extends('euterpe.createPlaylist')
 <div class="sidebar">
         
         <input type="text" id="search_sidebar" class="search_sidebar" placeholder="Search"> 
@@ -20,17 +20,21 @@
         <a href="/euterpe/playlist">
         <button class="playlist-btm">PLAYLISTS</button>
         </a>
-            <a href="/euterpe/playlist/new">
-                <button class="playlist-create">Create</button>
-            </a>
+            
+        <button  id ="playlist-create" class="playlist-create">Create</button>
+            
 </div>        
-           
 
 <div class="content" id="content">
 
 </div>
 
 <script type="text/javascript">
+
+            $(document).on('click','.open_modal',function(){
+                    var url = "euterpe/playlist/new";
+                    var tour_id= $(this).val(); 
+                });
     
                 function fetch_customer_data(query){
                     $.ajax({
