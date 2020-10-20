@@ -17,6 +17,7 @@ use App\Models\Playlist;
 use App\Repositories\AlbumRepository;
 use App\Validators\AlbumValidator;
 use App\Validators\MusicValidator;
+use App\Validators\PlaylistValidator;
 use App\Validators\ValidationException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
@@ -60,7 +61,7 @@ class PlaylistController extends Controller
     public function create(Request $request){
         try{    
             $this->authorize("create", User::class);
-            
+        
             //seting data
             $playlist = $request->all();
             $playlist['view'] = 0;
@@ -70,17 +71,63 @@ class PlaylistController extends Controller
             PlaylistValidator::validate($playlist);
             
             //creating image
-            $icon = Image::make($playlist['icon']);
-            Response::make($icon->encode('jpeg'));
-            $playlist["icon"]  = $icon;
+            $icon = $request->file('icon');
+            $icon_name = time() . '.' . $icon->extension();
+            $request->icon->storeAs('playlist/icon',$icon_name);
+            $playlist["icon"]  = $icon_name;
             
             //creating playlist
             Playlist::create($playlist);
-
+            return redirect('euterpe/playlist');
         }catch(ValidationException $exception){
             return redirect('euterpe/playlist/new')->withErrors($exception->getValidator())->withInput();
         }
 
     }
+
+    function action(Request $request){
+     
+        if($request->ajax()){
+            $output = '';
+            $query = $request->get('query');
+
+        if($query != ''){
+            $data = Playlist::where('name', 'like', '%'.$query.'%')->get();
+
+        }else{
+
+            $data = Playlist::all();
+        }
+        
+        $total = $data->count();
+        if($total > 0){
+
+            foreach($data as $row){
+                $output .= '<div class="slide">
+                <div class="overlay">
+                <a href="playlist/edit/'.$row->id.'" class="button" id="playlist-edit"></a>
+                </div>
+                <img class="playlists" src="http://127.0.0.1:8000/storage/playlist/icon/'.$row->icon.'")}}">
+                <h2>'.$row->name.'</h2>
+                </div>';
+            }
+
+        }else{
+            $output = '<h2 class = "error">Sorry, nothing found :(</h2>';
+        }
+        $data = array(
+            'value'  => $output
+        );
+        echo json_encode($data);
+     }
+    }
+
+    public function delete(Request $request){
+        $playlist = Playlist::find($request->id);
+        
+        $playlist->delete();
+        return redirect('euterpe/playlist');
+    }
+ 
  
 }

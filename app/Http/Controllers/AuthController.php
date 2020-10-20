@@ -18,7 +18,9 @@ class AuthController extends Controller
 
     
     function login(Request $request){
-        
+        if(Auth::check()){
+            return redirect()->route("welcome");
+        }
         try{
         $credentials = [
             "username" =>$request->username,
@@ -46,6 +48,10 @@ class AuthController extends Controller
 
     function signup(Request $request){
         try{
+            if(Auth::check()){
+                return redirect()->route("welcome");
+            }
+            
             if(strlen($request->day) == 1){
                 $request['day'] = '0'.$request['day'];
             }

@@ -19,10 +19,16 @@ class Controller extends BaseController
     }
 
     function form_login(){
+        if(Auth::check()){
+            return redirect()->route("welcome");
+        }
         return view('login');
     }
 
     function form_signup(){
+        if(Auth::check()){
+            return redirect()->route("welcome");
+        }
         return view('signup');
     }
     
