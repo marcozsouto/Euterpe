@@ -138,7 +138,7 @@ input[type=date].releaseDate{
     position: absolute;
     background: #272727;
     border: 1px solid #272727;
-    border-radius: 8px;
+    border-radius: 10px;
     width:  200px;
     height: 30px;
     padding: 12px 20px;
@@ -158,7 +158,7 @@ input[type=submit] {
     padding: 7px 20px;
     box-sizing: border-box;
     border: 1px solid #272727;
-    border-radius: 15px;
+    border-radius: 10px;
     background: #272727;
     font: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
@@ -174,7 +174,7 @@ input[type=submit].edit{
     padding: 7px 20px;
     box-sizing: border-box;
     border: 1px solid #272727;
-    border-radius: 15px;
+    border-radius: 10px;
     background: #272727;
     font: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
@@ -209,7 +209,7 @@ select{
     width: 400px;
     box-sizing: border-box;
     border: 1px solid #272727;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: #272727;
     font: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
@@ -248,7 +248,7 @@ input.music_name, input.music_description{
     position: relative;
     background: #272727;
     border: 1px solid #272727;
-    border-radius: 8px;
+    border-radius: 10px;
     width:  300px;
     height: 25px;
     padding: 12px 20px;
@@ -296,11 +296,12 @@ button.add, button.remove{
     padding: 7px 20px;
     box-sizing: border-box;
     border: 1px solid #272727;
-    border-radius: 15px;
+    border-radius: 10px;
     background: #272727;
     font: 0.7em 'Montserrat', sans-serif;
     font-weight: 700;
     color: white;
+    text-decoration: none;
 }
 button.add:hover{
     transition: 0.4ms;
@@ -325,10 +326,11 @@ button.remove:hover{
     padding: 7px 20px;
     box-sizing: border-box;
     border: 1px solid #272727;
-    border-radius: 15px;
+    border-radius: 10px;
     background: #272727;
     font: 0.9em 'Montserrat', sans-serif;
     color: white;
+    text-decoration: none;
 }
 
 .button:hover{

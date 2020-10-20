@@ -134,7 +134,7 @@ div.box3{
 div.photos{
     position: absolute;
     top: 20%;
-    left: 7%;
+    left: 12%;
 }
 
 img{
@@ -306,9 +306,9 @@ label.button2 button{
     position: absolute;
     top: 53%;
     left: 35%;
-    background-color: #ff7f6b;
-    border-color: #ff7f6b;
-    color: #1EB1EB;;
+    background-color: #F05E54;
+    border-color: #F05E54;
+    color: #1EB1EB;
     height: 46px;
 }
 

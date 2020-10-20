@@ -247,6 +247,7 @@ p{
     font: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
     color: white;
+    text-decoration: none;
 }
 
 .hide {

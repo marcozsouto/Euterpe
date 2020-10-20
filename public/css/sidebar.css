@@ -112,9 +112,9 @@ input[type=text].search_sidebar:hover{
 
 div.slides{
     position: relative;
-    top: 9%;
-    left: 2%;
-    width: 1570px;
+    top: 9.3%;
+    left: 3.3%;
+    width: 1750px;
     height: 70px;
 }
 
@@ -122,12 +122,13 @@ p.s{
     position: relative;
     font: 2.5em 'Montserrat', sans-serif;
     font-weight: 700;
-    left: 2.0%;
+    left: 4%;
     text-align: left;
     background: none;
     color: white;
     width: 190px;
-    top: 7%;
+    top: 60px;
+    z-index: 1;
     
 }
 
@@ -135,12 +136,12 @@ p.songs{
     position: relative;
     font: 1.5em 'Montserrat', sans-serif;
     font-weight: 700;
-    left: 2.0%;
+    left: 4.0%;
     text-align: left;
     background: none;
     color: #E0E0E0;
     width: 190px;
-    top: 8%;
+    top: 9%;
     
 }
 
