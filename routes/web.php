@@ -68,6 +68,10 @@ Route::post('euterpe/playlist/new',['uses' => 'Euterpe\PlaylistController@create
     //edit
 Route::get('euterpe/playlist/edit/{id}',['uses' => 'Euterpe\PlaylistController@form_playlist_edit'])->name("euterpe.playlist.edit");
 Route::post('euterpe/playlist/edit',['uses' => 'Euterpe\PLaylistController@edit'])->name("euterpe.playlist.edit.do");
+    //search
+Route::get('euterpe/playlist/search', 'Euterpe\PlaylistController@action')->name('euterpe.playlist.search.do');
+    //delete
+Route::get('euterpe/playlist/delete/{id}',['uses' => 'Euterpe\PlaylistController@delete'])->name("euterpe.playlist.delete");
 
 //admin search music
 Route::get('euterpe/music/search', 'Euterpe\MusicController@action')->name('euterpe.music.search.do');
