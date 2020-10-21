@@ -23,6 +23,7 @@
         <span class="close">&times;</span>
         @csrf
             <h1 class="playlist">Create Playlist.</h1>
+            <input type="hidden" name="id" value="{{$playlist->id}}">
             <label class="name-playlist" for="name">Name</label></br>
             <input class="name-playlist" type="text" name="name" value="{{$playlist->name}}"/>    
         </br>

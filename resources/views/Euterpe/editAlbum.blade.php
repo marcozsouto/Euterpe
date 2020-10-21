@@ -21,6 +21,8 @@
         <form action="{{route('euterpe.album.edit.do')}}" method='post' enctype="multipart/form-data" id="form">
         @csrf
         <div class="data">
+
+            <input type="hidden" name="id" value="{{$album->id}}">
             <label class = "name"for="name">name</label></br>
             <input class = "name" type="text" name="name" value="{{$album->name}}"/>    
       
@@ -118,7 +120,7 @@
                         html += '<td><input class="music_name" type="text" name="music_name['+ number +']" value="'+ music[number-1]['name'] +'"></td>';
                         html += '<td><input class="music_time" type="time" name="music_time['+ number +']" value="'+ music[number-1]['time'] +'"</td>';
                         html += '<td><label class ="music_file" for="music_file[' + number +']"></label><input id="music_file['+ number +']" type="file" name="music_file['+ number +']"</td>';
-                        html += '<td><input class="music_description" type="text" name="music_description['+ number +'] value="'+ music[number-1]['description'] +'""</td>';
+                        html += '<td><input class="music_description" type="text" name="music_description['+ number +']" value="'+ music[number-1]['description'] +'"></td>';
                     }if(number > num){
                         html += '<td><input class="music_name" type="text" name="music_name['+ (number-1) +']"></td>';
                         html += '<td><input class="music_time" type="time" name="music_time['+ (number-1) +']"</td>';
