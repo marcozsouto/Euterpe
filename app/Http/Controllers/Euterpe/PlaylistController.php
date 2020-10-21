@@ -8,11 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\AlbumCreateRequest;
-use App\Http\Requests\AlbumUpdateRequest;
-use App\Models\Album;
-use App\Models\Artist;
-use App\Models\Music;
+
 use App\Models\Playlist;
 use App\Repositories\AlbumRepository;
 use App\Validators\AlbumValidator;
@@ -45,10 +41,32 @@ class PlaylistController extends Controller
     }
 
     public function edit(Request $request){
-        $this->authorize("create", User::class);
-        return dd($request);
-        $playlist = Playlist::find($request->id);
-        
+        try{
+            $this->authorize("create", User::class);
+            
+            $playlist = Playlist::find($request->id);
+            $input = $request->all();
+    
+
+            
+            if($request->has('icon') == true){
+                PlaylistValidator::validate($input);
+                $icon = $request->file('icon');
+                $icon_name = time() . '.' . $icon->extension();
+                $request->icon->storeAs('playlist/icon',$icon_name);
+                $input["icon"]  = $icon_name;
+            }
+    
+            PlaylistValidator::edit_validate($input);
+            
+            $playlist->fill($input);
+            $playlist->save();
+    
+            return redirect('euterpe/playlist');
+    
+            }catch(ValidationException $exception){
+                return redirect("euterpe/playlist/edit/".$request->id)->withErrors($exception->getValidator())->withInput();
+            }
                  
     }
 

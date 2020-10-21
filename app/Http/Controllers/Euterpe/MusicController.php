@@ -48,6 +48,11 @@ class MusicController extends Controller
                 <p class ="s">Search</p>';
         $output .= ' 
                 <p class ="songs">Songs</p>';
+        $output .= ' 
+                <div class= song-line></div>';
+        $output .= ' 
+                <p class ="albums">ALBUMS</p>';
+        
         if($total > 0){
 
             foreach($musics as $music){
@@ -56,7 +61,8 @@ class MusicController extends Controller
                 <div class= line></div>
                 <h2 class= "name">'.$music->name.'</h2>
                 <img class = "icon-music"src="http://127.0.0.1:8000/storage/album/icon/'.$music->album->icon.'">
-                <h3 class = "album">'.$music->album->artist->name.' - '.$music->album->name.'</h2>;
+                <h3 class = "artist">'.$music->album->artist->name.'</h3>
+                <h3 class = "album">'.$music->album->name.'</h3>
                 </div>';
             }
 

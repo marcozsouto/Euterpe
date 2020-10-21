@@ -140,31 +140,35 @@ class ArtistController extends Controller
     public function edit(Request $request){
         try{
         $this->authorize("create", User::class);
-        ini_set('memory_limit','512M');
-        $artist = Artist::find($request->id);
-
-        $art = $request->all();
-    
-            
-        //creating image
-        $cover = $request->file('cover');
-        $cover_name = time() . '.' . $cover->extension();
-        $request->cover->storeAs('artist/cover',$cover_name);
-        $artist["cover"]  = $cover_name;
-
-        $icon = $request->file('icon');
-        $icon_name = time() . '.' . $icon->extension();
-        $request->icon->storeAs('artist/icon',$icon_name);
-        $artist["icon"]  = $icon_name;
-      
-       
         
-        //ArtistValidator::validate($request->all());
+        $artist = Artist::find($request->id);
+        $input = $request->all();
 
-        $artist->name = $art['name'];
-        $artist->description = $art['description'];
-        $artist->musicGender = $art['musicGender']; 
-        $artist->update();
+        if($request->has('icon') == true and $request->has('cover') == true){
+            ArtistValidator::validate($input);
+        }
+        
+        if($request->has('icon') == true){
+            $icon = $request->file('icon');
+            $icon_name = time() . '.' . $icon->extension();
+            $request->icon->storeAs('artist/icon',$icon_name);
+            $input["icon"]  = $icon_name;
+        }
+
+        if($request->has('cover') == true){
+            $cover = $request->file('cover');
+            $cover_name = time() . '.' . $cover->extension();
+            $request->cover->storeAs('artist/cover',$cover_name);
+            $input["cover"]  = $cover_name;
+        }
+       
+
+
+        ArtistValidator::edit_validate($input);
+        
+        $artist->fill($input);
+        $artist->save();
+
         return redirect('euterpe/artist');
 
         }catch(ValidationException $exception){

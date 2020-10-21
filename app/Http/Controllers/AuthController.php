@@ -57,6 +57,8 @@ class AuthController extends Controller
             }
             $birth = $request['year'].'-'.$request['month'].'-'.$request['day'];
             $request->request->add(['birth' => $birth]);
+            
+
             //validating album data
             UserValidator::validate($request);
             
@@ -69,8 +71,13 @@ class AuthController extends Controller
             $user['password'] = Hash::make($data['password']);
             $user['gender'] = $data['gender']; 
             $user['birth'] = $birth;
-            $user['icon'] = $data['icon']; 
-            //creating album
+            
+            $icon = $request->file('icon');
+            $icon_name = time() . '.' . $icon->extension();
+            $request->icon->storeAs('user/icon',$icon_name);
+            $user["icon"]  = $icon_name;
+            
+            //creating user
             $user = User::create($user);
 
             //redirectin created user

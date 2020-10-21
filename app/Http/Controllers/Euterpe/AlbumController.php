@@ -13,10 +13,12 @@ use App\Http\Requests\AlbumUpdateRequest;
 use App\Models\Album;
 use App\Models\Artist;
 use App\Models\Music;
+use App\Models\Playlist;
 use App\Repositories\AlbumRepository;
 use App\Validators\AlbumValidator;
 use App\Validators\MusicValidator;
 use App\Validators\ValidationException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Validator;
@@ -58,7 +60,7 @@ class AlbumController extends Controller
                 <a href="album/edit/'.$row->id.'" class="button"></a>
                 </div>
                 <img class="albums" src="http://127.0.0.1:8000/storage/album/icon/'.$row->icon.'")}}">
-                <h2>'.$row->name.'</h2>
+                <a href="album/'.$row->id.'"class="album-name">'.$row->name.'</a>
                 </div>';
             }
 
@@ -152,12 +154,73 @@ class AlbumController extends Controller
     }
 
     public function edit(Request $request){
+        try{
         $this->authorize("create", User::class);
-        return dd($request);
+        
         $album = Album::find($request->id);
+        $input = $request->all();
+        $input['numberOfTracks'] = sizeof($input["music_name"]);
+
+        if($request->has('icon') == true){
+            AlbumValidator::validate($input);
+            $icon = $request->file('icon');
+            $icon_name = time() . '.' . $icon->extension();
+            $request->icon->storeAs('album/icon',$icon_name);
+            $input["icon"]  = $icon_name;
+        }
+        
+        AlbumValidator::edit_validate($input);
+        
+        $album->fill($input);
+        $album->save();
+
+    
+
+        for($i = 1; $i <= $input['numberOfTracks']; $i++ ){
+            $musics = array();
+            $musics["name"] = $input['music_name'][$i];
+            $musics["time"] = $input['music_time'][$i];
+
+            if($request->has('music_file') == true and array_key_exists($i, $input['music_file'])){
+                $music_file = $request->file()['music_file'][$i];
+                $music_name = time() . '.' . $music_file->extension();
+                $music_file->storeAs('album/music',$music_name);
+                $musics["music"] = $music_name; 
+            }else{
+                $musics["music"] = $album->music[$i-1]->music;
+            }
+
+            if(isset($album->music[$i-1])){
+                $musics["streams"] = $album->music[$i-1]->streams; 
+            }else{
+                $musics["streams"] = 0; 
+            }
+
+            $musics["description"] = $input['music_description'][$i];
+            $musics["trackNumber"] = $i;
+            $musics["album_id"] = $album->id;
+
+            MusicValidator:: validate($musics);
+            
+            if(isset($album->music[$i-1])){
+                $album->music[$i-1]->fill($musics);
+                $album->music[$i-1]->save();
+            }else{
+                Music::create($musics);
+            }
+
+        }
+
+        
+        
+        return redirect('euterpe/album');
+        }catch(ValidationException $exception){
+            return redirect('euterpe/album/edit/'.$request->id)->withErrors($exception->getValidator())->withInput();
+        }
     }
 
     public function delete(Request $request){
+        
         $album = Album::find($request->id);
         $musics = Music::where('album_id', $request->id)->get();
         
@@ -169,6 +232,13 @@ class AlbumController extends Controller
        
         $album->delete();
         return redirect('euterpe/album');
+    }
+
+    function show_album($id){
+        $this->authorize("create", User::class);
+        $album = Album::find($id);
+        $playlist = Auth::user()->playlist;
+        return view('euterpe.showAlbum',['album' => $album,'playlists' => $playlist]);
     }
  
 }
