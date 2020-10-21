@@ -68,4 +68,22 @@ class AlbumValidator extends LaravelValidator
         return $validator;
     }
 
+    public static function edit_validate($data){
+
+        
+        //basic validation
+        $validator = Validator::make($data, Album::$rules, Album::$messages);
+        
+        //validates a real artist for the album 
+        if(!Artist::where('id',$data['artist_id'])->exists()){
+            $validator->errors()->add('artist_id', "This artist doesn't exist.");
+        }
+
+        
+        if(!$validator->errors()->isEmpty())
+            throw new ValidationException($validator, $validator->getMessageBag());
+
+        return $validator;
+    }
+
 }

@@ -34,7 +34,7 @@ class MusicValidator extends LaravelValidator
         
         
         if(!$validator->errors()->isEmpty())
-            throw new ValidationException($validator, "Error on music validation");
+            throw new ValidationException($validator, $validator->getMessageBag());
         return $validator;
     
     }

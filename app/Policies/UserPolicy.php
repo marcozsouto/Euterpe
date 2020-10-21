@@ -23,4 +23,8 @@ class UserPolicy
     public function create(){
         return Auth::user()->username == "euterpe";
     }
+
+    public function isUserLogged(){
+        return Auth::check();
+    }
 }

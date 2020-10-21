@@ -76,4 +76,15 @@ class ArtistValidator extends LaravelValidator
         return $validator;
     
     }
+
+    public static function edit_validate($data){
+        
+        //basic validation
+        $validator = Validator::make($data, Artist::$rules, Artist::$messages);   
+           
+        if(!$validator->errors()->isEmpty())
+            throw new ValidationException($validator, "Error on artist validation");
+        return $validator;
+    
+    }
 }

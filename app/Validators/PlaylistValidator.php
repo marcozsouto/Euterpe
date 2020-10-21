@@ -62,4 +62,20 @@ class PlaylistValidator extends LaravelValidator
         return $validator;
     
     }
+
+    public static function edit_validate($data){
+        
+        //basic validation
+        $validator = Validator::make($data, Playlist::$rules, Playlist::$messages);
+
+        //validates a real user for the playlist 
+        if(!User::where('id',$data['user_id'])->exists())
+            $validator->errors()->add('user_id', "This user doesn't exist."); 
+
+            
+        if(!$validator->errors()->isEmpty())
+            throw new ValidationException($validator, "Error on playlist validation");
+        return $validator;
+    
+    }
 }
