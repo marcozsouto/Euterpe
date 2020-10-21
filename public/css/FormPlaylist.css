@@ -7,6 +7,7 @@ div.form-playlist{
     left: 30%;
     top:30%;
     display: none;
+    z-index: 5;
     overflow: auto;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;

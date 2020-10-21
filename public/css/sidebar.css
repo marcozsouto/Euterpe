@@ -103,6 +103,8 @@ input[type=text].search_sidebar:hover{
     background-color: #141414;
     height: calc(100% - 90px);
     display: none;
+    z-index: 3;
+    
 }
 
 .content-active{  
@@ -112,10 +114,11 @@ input[type=text].search_sidebar:hover{
 
 div.slides{
     position: relative;
-    top: 9.3%;
-    left: 3.3%;
+    top: 11%;
+    left: 3.5%;
     width: 1750px;
-    height: 70px;
+    height: 60px;
+    margin-bottom: 7px;
 }
 
 p.s{
@@ -146,25 +149,25 @@ p.songs{
 }
 
 div.line{
-    border-bottom: 0.1px solid #363636;
+    border-bottom: 0.1px solid#363636;
     border-top: 0;
-    position: relative;
-    width:  100%;
-    right:  0%;
-    top: 0%;
-    
+    position: absolute;
+    width:  95%;
+    right: 0;
+    top: 95%;
 }
 
 h2.name{
-    position: relative;
+    position: absolute;
     font: 1em 'Montserrat', sans-serif;
-    font-weight: 700;
-    left: 6%;
+    font-weight: 600;
+    left: 5%;
     text-align: left;
     background: none;
     color: #D3D3D3;
-    width: 400px;
-    top: 10%;
+    width: 500px;
+    top: 18%;
+    border: 0;
 }
 
 h2.error{
@@ -178,23 +181,60 @@ h2.error{
     top: 250px;
 }
 
-h3{
-    position: relative;
-    font: 0.6em 'Montserrat', sans-serif;
+h3.artist{
+    position: absolute;
+    font: 0.7em 'Montserrat', sans-serif;
     font-weight: 600;
-    left: 6.2%;
+    left: 5%;
     text-align: left;
     background: none;
     color: #888888;
     width: 400px;
-    top: -75%;
+    top: 60%;
+    border: 0;
 }
 
+h3.album{
+    position: absolute;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 600;
+    left: 50%;
+    text-align: left;
+    background: none;
+    color: #888888;
+    width: 300px;
+    top: 26%;
+    border: 0;
+}
+
+
 img.icon-music{
-    position: relative; 
-    width: 60px;
-    height: 60px; 
+    position: absolute; 
+    width: 50px;
+    height: 50px; 
     border-radius: 5px;
-    top: -20%;
+    top: 10%;
     left: 0.5%;
+}
+
+.song-line{
+    border-bottom: 0.1px solid#363636;
+    border-top: 0;
+    position: absolute;
+    width:  94.37%;
+    right: 2.3%;
+    top: 18%;
+}
+
+p.albums{
+    position: absolute;
+    font: 1em 'Montserrat', sans-serif;
+    font-weight: 600;
+    left: 50.7%;
+    text-align: left;
+    background: none;
+    color: #888888;
+    width: 100px;
+    top: 15%;
+    border: 0;
 }

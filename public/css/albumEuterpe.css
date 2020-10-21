@@ -67,7 +67,7 @@ h1{
     z-index: 1;
 }
 
-h2{
+a.album-name:link,a.album-name:visited {
     width: 250px;
     font: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
@@ -75,6 +75,12 @@ h2{
     text-align: left;
     position: absolute;
     left: 13%;
+    bottom: 4%;
+    text-decoration: none;
+}
+
+a.album-name:hover{
+    text-decoration: underline;
 }
 
 div.slide{
@@ -153,3 +159,4 @@ a.button{
 a.button:hover{
     background-color: #F05E54; 
 }
+
