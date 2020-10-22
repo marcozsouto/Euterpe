@@ -40,7 +40,7 @@ class Playlist extends Model implements Transformable
     public $timestamps = true;
 
 
-    public function owner(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
 
