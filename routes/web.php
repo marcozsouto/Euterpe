@@ -48,6 +48,7 @@ Route::get('euterpe/album/delete/{id}',['uses' => 'Euterpe\AlbumController@delet
     //show album
 Route::get('euterpe/album/{id}', ['uses' => 'Euterpe\AlbumController@show_album'])->name("euterpe.album.show");
 
+
 //admin artist crud
 Route::get('euterpe/artist',['uses' => 'Euterpe\ArtistController@form_artist'])->name("euterpe.artist");
     //create
@@ -60,6 +61,9 @@ Route::post('euterpe/artist/edit',['uses' => 'Euterpe\ArtistController@edit'])->
 Route::get('euterpe/artist/search', 'Euterpe\ArtistController@action')->name('euterpe.artist.search.do');
     //delete
 Route::get('euterpe/artist/delete/{id}',['uses' => 'Euterpe\ArtistController@delete'])->name("euterpe.artist.delete");
+    //show playlist
+Route::get('euterpe/artist/{id}', ['uses' => 'Euterpe\ArtistController@show_artist'])->name("euterpe.artist.show"); 
+
 
 //admin playlist crud
 Route::get('euterpe/playlist',['uses' => 'Euterpe\PlaylistController@form_euterpe_playlist'])->name("euterpe.playlist");
@@ -73,11 +77,15 @@ Route::post('euterpe/playlist/edit',['uses' => 'Euterpe\PLaylistController@edit'
 Route::get('euterpe/playlist/search', 'Euterpe\PlaylistController@action')->name('euterpe.playlist.search.do');
     //delete
 Route::get('euterpe/playlist/delete/{id}',['uses' => 'Euterpe\PlaylistController@delete'])->name("euterpe.playlist.delete");
-    //add music
-Route::get('euterpe/playlist/add/{id}',['uses' => 'Euterpe\PlaylistController@add_music'])->name("euterpe.playlist.add.music");
+    //ad_music_playlist
+Route::get('euterpe/playlist/add/{playlist_id}/{song_id}',['uses' => 'Euterpe\PlaylistController@add_music'])->name("euterpe.playlist.add"); 
+    //show playlist
+Route::get('euterpe/playlist/{id}', ['uses' => 'Euterpe\PlaylistController@show_playlist'])->name("euterpe.playlist.show"); 
+    //delete music from playlist
+Route::get('euterpe/playlist/remove/{playlist_id}/{song_id}',['uses' => 'Euterpe\PlaylistController@remove_music'])->name("euterpe.playlist.remove");    
+//admin search 
+Route::get('euterpe/search', 'Euterpe\SearchController@action')->name('euterpe.search.do');
 
-//admin search music
-Route::get('euterpe/music/search', 'Euterpe\MusicController@action')->name('euterpe.music.search.do');
 
 //USER ROUTES
 Route::get('/home', ['uses' => 'User\ControllerUser@homepage'])->name("home");
