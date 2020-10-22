@@ -16,6 +16,24 @@ div.form-playlist{
     
 }
 
+div.form-edit-playlist{
+    position: absolute;
+    width: 750px;
+    height: 450px;
+    background-color: #1F1F1F;
+    border-radius: 15px;
+    left: 30%;
+    top:30%;
+    display: none;
+    z-index: 5;
+    overflow: auto;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+    
+}
+
 @-webkit-keyframes animatetop {
     from {top:0%; opacity:0} 
     to {top:30%; opacity:1}
@@ -138,6 +156,51 @@ label.icon-playlist{
     color:  white;
 }
 
+img.icon-playlist-edit{
+    position: absolute;
+    z-index: 1;
+    width: 220px;
+    height: 220px; 
+    margin-top:15px; 
+    margin-left:11px;
+    border-radius: 10px;
+    top: 22%;
+    left: 3%;
+    padding: 0;
+    background-color:  #272727;
+    background-size: 100%;
+}
+
+div.overlay-playlist-edit{
+    position: absolute;
+    opacity: 0;
+    width: 220px;
+    height: 220px;  
+    top: 25.3%;
+    left: 4.39%;
+    border-radius: 10px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all .3s ease;    
+}
+
+label.icon-playlist-edit{
+    top: 43%;
+    left: 33%;
+    z-index: 5;
+    color:transparent;
+}
+
+div.overlay-playlist-edit:hover{
+    opacity: 1;
+    cursor: pointer;
+       
+}
+
+label.icon-playlist-edit{
+    color:  white;
+}
+
 input[type=text]:focus, textarea:focus,  input[type=submit]:focus{
     outline: none;
 }
@@ -176,7 +239,7 @@ h1.playlist{
     top: 8%;
 }
 
-.button.remove-playlist{
+.remove-playlist{
     position: absolute;
     float: left;
     display: block;
@@ -206,6 +269,24 @@ h1.playlist{
   }
   
 .close:hover, .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.close-edit {
+    position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 50px;
+    right: 1%;
+    font-weight: 300;
+    border: none;
+    background-color: transparent;
+  }
+  
+.close-edit:hover, .close:focus {
     color: white;
     text-decoration: none;
     cursor: pointer;

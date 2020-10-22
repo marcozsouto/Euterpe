@@ -10,31 +10,37 @@
     background-color: #141414;
 }
 
-
-body{
-    height: 100%;
+div.box{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    width: calc(100% - 280px);
+    background-color: #141414;
+    height: calc(100% - 90px);
+    top: 90px;
 }
+
 .search::placeholder {
-    font-family: 0.2em 'Montserrat', sans-serif;
+    font-family: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
     color: #888888;
 }
 
 img.artists{
-    width: 250px;
-    height: 250px; 
+    width: 200px;
+    height: 200px; 
     margin-top:15px; 
-    margin-left:35px;
-    border-radius: 100%;
+    margin-left:15px;
+    border-radius: 50%;
 }
 
 div.artists{
     position: absolute;
     right: 0;
     z-index: 0;
-    width: calc(100% - 290px); 
-    height: 300px;
-    top: 30%;
+    width: calc(100% - 60px); 
+    height: calc(100% - 21%);
+    top: 21%;
     display: flex;
 } 
 
@@ -48,45 +54,52 @@ header{
     position: fixed;
 }
 
-
-
 div.new{
     border-bottom: 0.1px solid #363636;
     border-top: 0;
     position: absolute;
-    width:  1750px;
+    width:  1550px;
     right:  2%;
-    top: 21%;
-    z-index: 4;
+    top: 14%;
+    z-index: 1;
 }
 
 h1{
     position: relative;
     font: 2.5em 'Montserrat', sans-serif;
     font-weight: 700;
-    left: 16.5%;
+    left: 3.5%;
     text-align: left;
     background: none;
     color: white;
     width: 190px;
-    top: 150px;
+    top: 70px;
     z-index: 1;
 }
 
-h2{
-    width: 250px;
+a.artist-name:link,a.artist-name:visited {
+    width: 190px;
     font: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
     color: #ABABAB;
-    text-align: center;
+    text-align: left;
     position: absolute;
-    left: 35px;
+    left: 7.7%;
+    bottom: 5%;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+a.artist-name:hover{
+    text-decoration: underline;
 }
 
 div.slide{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     position: relative;
+   
 }
 
 input[type=text] {
@@ -94,9 +107,9 @@ input[type=text] {
     background: transparent;
     border: 1px solid transparent;
     border-radius: 8px;
-    width:  1750px;
+    width:  1550px;
     right:  2%;
-    top: 22%;
+    top: 15%;
     padding: 12px 20px;
     font: 0.9em 'Montserrat', sans-serif;
     font-weight: 700;
@@ -126,11 +139,11 @@ h2.error{
     transition: all .3s ease;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.3);
-    width: 250px;
-    height: 250px; 
+    width: 200px;
+    height: 200px; 
     top: 15px;
-    left: 35px;
-    border-radius: 100%;
+    left: 15px;
+    border-radius: 50%;
 }
 
 .overlay:hover{
@@ -141,15 +154,15 @@ h2.error{
 
 a.button{
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     border-radius: 50px;
     background-repeat: no-repeat;
     background-size: 70%;
     background-position: center;
     background-color: transparent;
-    top: 45%;
-    right: 42%;
+    top: 46%;
+    right: 44%;
     display: inline-block;
     background-color: rgba(192,192,192, 0.4);
     background-image: url("img/edit.svg");

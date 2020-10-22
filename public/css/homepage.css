@@ -15,22 +15,22 @@ div.box1{
     z-index: 0;
     width: calc(100% - 280px);
     background-color: #141414;
-    height: 91.6%;
+    height: calc(100% - 90px);
     top: 90px;
 }
 
 
-div.playlist{
+div.playlist-homepage{
     top:19%;
 
 }
 
-div.album{
+div.album-homepage{
     top:48%;
 
 }
 
-div.artist{
+div.artist-homepage{
     top:77%;
 
 }
@@ -58,7 +58,7 @@ header{
     top: 3%;
 }
 
-.Albums, .Playlists, .Artists{
+.Albums-homepage, .Playlists-homepage, .Artists-homepage{
     width: 130px;
     font: 1.8em 'Montserrat', sans-serif;
     font-weight: 700;
@@ -68,27 +68,28 @@ header{
     position: absolute;
     left: 2%;
     text-align: left;
+    
 }
 
-.Playlists{
+.Playlists-homepage{
     top: 13.5%;
 }
 
-.Artists{
+.Artists-homepage{
     top: 72%;
     
 }
 
-.Albums{
+.Albums-homepage{
     top: 43%;
 }
 
-.Playlists:hover, .Albums:hover, .Artists:hover{
+.Playlists-homepage:hover, .Albums-homepage:hover, .Artists-homepage:hover{
     color: #F05E54;
     cursor: pointer;
 }
 
-img{
+.img-homepage{
     width: 150px;
     height: 150px; 
     margin-top:15px; 
@@ -121,7 +122,7 @@ div.Arrow{
     top:31.5%;
 }
 
-img.albums, img.playlists{
+img.albums-homepage, img.playlists-homepage{
     width: 150px;
     height: 150px; 
     margin-top:15px; 
@@ -129,7 +130,7 @@ img.albums, img.playlists{
     border-radius: 5px;
 }
 
-img.artists{
+img.artists-homepage{
     border-radius: 100px;
     margin-left:35px;
     width: 150px;
@@ -137,12 +138,13 @@ img.artists{
     margin-top:15px; 
 }
 
-div.album, div.playlist, div.artist{
+div.album-homepage, div.playlist-homepage, div.artist-homepage{
     position: absolute;
     right: 0;
     z-index: 0;
     width: 100%; 
     height: 200px;
+    display: flex;
 }
 
 div.slick-list.draggable{
@@ -243,7 +245,18 @@ div.Arrow{
     height: 25px;
 }
 
-h2{
+h2.playlist-homepage{
+    width: 150px;
+    height: 20px;
+    font: 0.7em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: left;
+    position: absolute;
+    left: 18%;
+}
+
+h2.albums-homepage{
     width: 150px;
     height: 20px;
     font: 0.7em 'Montserrat', sans-serif;
@@ -255,7 +268,7 @@ h2{
 }
 
 
-h2.artist{
+h2.artist-homepage{
     width: 150px;
     height: 20px;
     font: 0.7em 'Montserrat', sans-serif;
@@ -266,7 +279,7 @@ h2.artist{
     left: 17.5%;
 }
 
-div.slide{
+div.slide-homepage{
     width: 200px;
     height: 200px;
     position: relative;

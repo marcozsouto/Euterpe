@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+           -box-sizing: border-box;
+    
+}
+
+header{
+    width: calc(100% - 280px);
+    height: 90px;
+    right: 0px;
+    top: 0px;
+    background: #1F1F1F;
+    z-index: 5;
+    position: fixed;
+}
+
+.box-1{
+    position: absolute;
+    right: 0;
+    top: 90px;
+    background-color: #141414;
+    width: calc(100% - 280px);
+    height: calc(100% - 90px);
+}
+
+.artist-cover{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.artist-icon{
+    position: absolute;
+    left: 3%;
+    top: 260px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%; 
+}
+
+.artist-name{
+    position: absolute;
+    font: 1.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: left;
+    width: 900px;
+    top: 295px;
+    left: 9.2%;
+}
+
+.artist-albums-h1{
+    position: absolute;
+    font: 1.5em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #E0E0E0;
+    text-align: left;
+    width: 900px;
+    top: 69%;
+    left: 3%;
+}
+
+.artist-albums-line{
+    border-bottom: 0.1px solid#363636;
+    border-top: 0;
+    position: absolute;
+    width:  94%;
+    right: 3%;
+    top: 73%;
+}
+
+div.artist-albums{
+    position: absolute;
+    top: 74%;
+    width: 100%;
+    height: 220px;
+    display: flex;
+}
+
+div.slide-artistpage{
+    width: 220px;
+    height: 220px;
+    position: relative;
+}
+
+.artist-album-cover{
+    width: 190px;
+    height: 190px;
+    border-radius: 3%;
+    position: absolute;
+    left: 7.9%;
+    top: 2%;
+}
+
+.artist-album-name:link, .artist-album-name:visited{
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    width: 220px;
+    font: 0.80em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: center;
+    text-decoration: none;
+}
+
+.artist-album-name:hover{
+    color: #F05E54;
+}
+
+img.albums-homepage, img.playlists-homepage{
+    width: 150px;
+    height: 150px; 
+    margin-top:15px; 
+    margin-left:35px;
+    border-radius: 5px;
+}
+
+#nextArrow{  
+    background-image: url("img/right-arrow.svg");
+    background-repeat: no-repeat;
+    left: 95%;
+}
+
+#prevArrow{
+    background-image: url("img/left-arrow.svg");
+    left: 93.5%;    
+}
+
+div.Arrow{
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor:pointer;
+    border: none;
+    width: 25px;
+    height: 25px;
+    top:69%;
+}
+
+div.slick-list.draggable{
+    position: relative;
+    top: 0;
+    max-width: 100%;
+    height: 220px;
+    width: 100%;
+    height: 0px;
+}
+
+div.slick-track{
+    max-width: 100%;
+    left: 0px;
+    position: relative;
+    display: flex;
+}

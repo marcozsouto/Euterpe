@@ -1,5 +1,5 @@
 div.sidebar{
-    position: absolute;
+    position: fixed;
     width: 280px;
     height: 100%;
     left: 0px;
@@ -103,71 +103,195 @@ input[type=text].search_sidebar:hover{
     background-color: #141414;
     height: calc(100% - 90px);
     display: none;
-    z-index: 3;
+    z-index: 5;
     
 }
 
 .content-active{  
   display: inline;
-  z-index: 2;
+  z-index: 3;
 }
 
-div.slides{
-    position: relative;
-    top: 11%;
-    left: 3.5%;
-    width: 1750px;
-    height: 60px;
-    margin-bottom: 7px;
-}
-
-p.s{
-    position: relative;
-    font: 2.5em 'Montserrat', sans-serif;
-    font-weight: 700;
-    left: 4%;
-    text-align: left;
-    background: none;
-    color: white;
-    width: 190px;
-    top: 60px;
-    z-index: 1;
-    
-}
-
-p.songs{
+p.artists, p.albums, p.musics{
     position: relative;
     font: 1.5em 'Montserrat', sans-serif;
     font-weight: 700;
-    left: 4.0%;
+    left: 3.5%;
     text-align: left;
     background: none;
     color: #E0E0E0;
     width: 190px;
-    top: 9%;
-    
 }
 
-div.line{
+p.artists{
+    top: 4%;
+}
+
+p.albums{
+    top: 24%;
+} 
+
+p.musics{
+    top: 49%;
+}
+
+.artists-line, .albums-line, .musics-line{
     border-bottom: 0.1px solid#363636;
     border-top: 0;
     position: absolute;
-    width:  95%;
-    right: 0;
-    top: 95%;
+    width:  94.37%;
+    right: 2.3%;
 }
 
-h2.name{
+.artists-line{
+    top: 3.5%;
+}
+
+.albums-line{
+    top: 26.5%;
+}
+
+.musics-line{
+    top: 54.5%;
+}
+
+
+.search-artists, .search-albums, .search-musics{
     position: absolute;
-    font: 1em 'Montserrat', sans-serif;
-    font-weight: 600;
-    left: 5%;
+    width: 95%;
+    left: 3%;
+    display: flex;
+}
+
+.search-artists{
+    top: 8%;  
+    height: 158px;
+}
+
+.search-albums{
+    top: 31%; 
+    height: 200px; 
+}
+
+.search-musics{
+    top: 59%;
+    height: 350px;
+    
+}
+
+.search-artist{
+    position: relative;
+    top: 0%;
+    width: 190px;
+    height: 100%;
+    margin-left: 5px;
+}
+
+.search-artist-img{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 16%;
+    bottom: 13%;
+    border-radius: 50%;
+    
+}
+
+.search-artist-name:link,.search-artist-name:visited,.search-album-name:link,.search-album-name:visited, .search-album-artist-name:link,.search-album-artist-name:visited{
+    position: absolute;
+    width: 100%;
+    bottom: 0.5%;
+    text-align: center;
+    text-decoration: none;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+}
+
+.search-artist-name:hover, .search-album-name:hover, .search-album-artist-name:hover{
+    color: #F05E54;
+}
+
+.search-album{
+    position: relative;
+    top: 0%;
+    width: 240px;
+    height: 100%;
+    margin-left: 5px;
+}
+
+
+.search-album-img{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: 0%;
+    top: 1%;
+    border-radius: 3%;
+}
+
+.search-album-name:link,.search-album-name:visited{
     text-align: left;
-    background: none;
-    color: #D3D3D3;
-    width: 500px;
-    top: 18%;
-    border: 0;
+    bottom: 10.5%;
+}
+
+.search-album-artist-name:link,.search-album-artist-name:visited{
+    text-align: left;
+    bottom: 2.5%;
+}
+
+.search-music{
+    position: relative;
+    top: 0%;
+    width: 300px;
+    height: 70px;
+    margin-left: 5px;
+
+}
+
+.search-music-img{
+    position: relative;
+    top: 6%;
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+}
+
+.search-music-name:link,.search-music-name:visited {
+    position: absolute;
+    top: 11%;
+    left: 27%;
+    width: calc(100% - 27%);
+    text-align: left;
+    text-decoration: none;
+    font: 1em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+}
+
+.search-music-artist-name:link, .search-music-artist-name:visited {
+    position: absolute;
+    top: 45%;
+    left: 27%;
+    width: calc(100% - 27%);
+    text-align: left;
+    text-decoration: none;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #ABABAB;
+}
+
+.search-music-artist-name:hover, .search-music-name:hover{
+    color: #F05E54;
+}
+
+.search-music-line{
+    border-bottom: 0.1px solid#363636;
+    border-top: 0;
+    position: absolute;
+    width:  94.37%;
+    left: 0;
+    top: 0;
 }
 
 h2.error{
@@ -179,62 +303,4 @@ h2.error{
     position: relative;
     left: 500px;
     top: 250px;
-}
-
-h3.artist{
-    position: absolute;
-    font: 0.7em 'Montserrat', sans-serif;
-    font-weight: 600;
-    left: 5%;
-    text-align: left;
-    background: none;
-    color: #888888;
-    width: 400px;
-    top: 60%;
-    border: 0;
-}
-
-h3.album{
-    position: absolute;
-    font: 0.8em 'Montserrat', sans-serif;
-    font-weight: 600;
-    left: 50%;
-    text-align: left;
-    background: none;
-    color: #888888;
-    width: 300px;
-    top: 26%;
-    border: 0;
-}
-
-
-img.icon-music{
-    position: absolute; 
-    width: 50px;
-    height: 50px; 
-    border-radius: 5px;
-    top: 10%;
-    left: 0.5%;
-}
-
-.song-line{
-    border-bottom: 0.1px solid#363636;
-    border-top: 0;
-    position: absolute;
-    width:  94.37%;
-    right: 2.3%;
-    top: 18%;
-}
-
-p.albums{
-    position: absolute;
-    font: 1em 'Montserrat', sans-serif;
-    font-weight: 600;
-    left: 50.7%;
-    text-align: left;
-    background: none;
-    color: #888888;
-    width: 100px;
-    top: 15%;
-    border: 0;
 }
