@@ -14,13 +14,14 @@
             </div>
         </header>
         @extends('euterpe.sidebar')
+        <div class="box">
         <h1>Playlists</h1>
         <div class="new"></div>
         <input type="text" id="search" class="search" placeholder="Type here.."> 
 
         <div id="playlists" class="playlists">
         </div>
-
+    </div>
         <script type="text/javascript">
         $(document).ready(function(){
 

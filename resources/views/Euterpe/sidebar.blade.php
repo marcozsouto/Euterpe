@@ -31,14 +31,14 @@
 
 <script type="text/javascript">
 
-            $(document).on('click','.open_modal',function(){
+                $(document).on('click','.open_modal',function(){
                     var url = "euterpe/playlist/new";
                     var tour_id= $(this).val(); 
                 });
     
                 function fetch_customer_data(query){
                     $.ajax({
-                        url:"{{ route('euterpe.music.search.do') }}",
+                        url:"{{ route('euterpe.search.do') }}",
                         method:'GET',
                         data:{query:query},
                         dataType:'json',

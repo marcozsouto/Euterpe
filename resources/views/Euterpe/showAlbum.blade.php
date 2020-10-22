@@ -9,6 +9,10 @@
         <link rel="stylesheet" href="{{ asset('css/showAlbum.css') }}">
     </head>
     <body>
+        <header>
+            <div class="bar">
+        </div>
+        </header>
         @extends('euterpe.sidebar')
         <div class="box-1">
         <img class="album-icon" src="http://127.0.0.1:8000/storage/album/icon/{{$album->icon}}">
@@ -25,7 +29,17 @@
                     <div class="music-album-line"></div>
                     <h4 class="index">{{$index = $index + 1}}</h4>
                     <h4 class="music-name">{{$music->name}}</h4>
-                    <button class="add-to-playlist" onclick="show()"></button>
+                    <button class="add-to-playlist" id="{{$index}}"></button>
+                        <div class="options-playlist" id="{{$index}}">
+                        <h3 class="title-playlist">Add to your playlist</h3> 
+                        <div class="playlists-name">
+                        @foreach($playlists as $playlist)         
+                        <a href="/euterpe/playlist/add/{{$playlist->id}}/{{$music->id}}" class = "playlist-name">
+                        <button class="playlist-name">{{$playlist->name}}</button></a>
+                        </br>
+                        @endforeach   
+                        </div>
+                        </div>
                 </div>
             @endforeach
         </div>
@@ -36,13 +50,24 @@
         <script>
             $('html').click(function(e) { 
                 if(!$(e.target).hasClass('add-to-playlist')){
-                    document.getElementById("options-playlist").style.display = "none";
-                }                   
-                
-                });
-            function show() {
-            document.getElementById("options-playlist").style.display = "block";
-            }
+                    var cusid_ele = document.getElementsByClassName('options-playlist');
+                    for (var i = 0; i < cusid_ele.length; ++i) {
+                        document.getElementsByClassName("options-playlist")[i].style.display = "none";
+                    }     
+                }                  
+            });
+            
+            $('.add-to-playlist').click(function() {
+                var innerDivId = $(this).attr('id');
+                var cusid_ele = document.getElementsByClassName('options-playlist');
+                for (var i = 0; i < cusid_ele.length; ++i) {
+                    if(i == innerDivId - 1){
+                        document.getElementsByClassName("options-playlist")[innerDivId - 1 ].style.display = "block";
+                    }else{
+                        document.getElementsByClassName("options-playlist")[i].style.display = "none";
+                    }  
+                } 
+            });
         </script>
     </body>
 

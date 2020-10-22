@@ -23,16 +23,16 @@
 
             
                     <a href="{{ url('euterpe/playlist') }}">
-                        <button class="Playlists">Playlists</button>
+                        <button class="Playlists-homepage">Playlists</button>
                     </a>  
             
                 <div class="line-home" id="playlist"></div>
                 
-                <div class="playlist" id="playlist"> 
+                <div class="playlist-homepage" id="playlist"> 
                     @foreach($playlists as $playlist)
-                        <div class="slide">
-                        <img class="playlists" src="http://127.0.0.1:8000/storage/playlist/icon/{{$playlist->icon}}">
-                        <h2 class="playlist">{{$playlist->name}}</h2>
+                        <div class="slide-homepage">
+                        <img class="playlists-homepage" src="http://127.0.0.1:8000/storage/playlist/icon/{{$playlist->icon}}">
+                        <h2 class="playlist-homepage">{{$playlist->name}}</h2>
                         </div>  
                     @endforeach
                 </div>
@@ -41,16 +41,16 @@
                 <div class="Arrow" id="p_nextArrow"></div>
 
                     <a href="{{ url('euterpe/album') }}">
-                        <button class="Albums" >Albums</button>
+                        <button class="Albums-homepage" >Albums</button>
                     </a>
             
                 <div class="line-home" id="album"></div>
 
-                <div class="album" id="album">    
+                <div class="album-homepage" id="album">    
                     @foreach($albums as $album)
-                        <div class="slide">         
-                        <img class="albums" src="http://127.0.0.1:8000/storage/album/icon/{{$album->icon}}">
-                        <h2 class="albums">{{$album->name}}</h2>
+                        <div class="slide-homepage">         
+                        <img class="albums-homepage" src="http://127.0.0.1:8000/storage/album/icon/{{$album->icon}}">
+                        <h2 class="albums-homepage">{{$album->name}}</h2>
                         </div> 
                     @endforeach
                 </div>
@@ -60,16 +60,16 @@
 
             
                     <a href="{{ url('euterpe/artist') }}">
-                        <button class="Artists">Artists</button>
+                        <button class="Artists-homepage">Artists</button>
                     </a>
             
                 <div class="line-home" id="artist"></div>
 
-                <div class="artist" id="artist"> 
+                <div class="artist-homepage" id="artist"> 
                     @foreach($artists as $artist)
-                        <div class="slide">
-                        <img class="artists" src="http://127.0.0.1:8000/storage/artist/icon/{{$artist->icon}}">
-                        <h2 class="artist">{{$artist->name}}</h2>
+                        <div class="slide-homepage">
+                        <img class="artists-homepage" src="http://127.0.0.1:8000/storage/artist/icon/{{$artist->icon}}">
+                        <h2 class="artist-homepage">{{$artist->name}}</h2>
                         </div>  
                     @endforeach
                 </div>
@@ -79,7 +79,7 @@
 
                 <script type="text/javascript">
                 
-                $('.playlist').slick({
+                $('.playlist-homepage').slick({
                     infinite: true,
                     slidesToShow: 8,
                     slidesToScroll: 2,
@@ -88,7 +88,7 @@
                     nextArrow: $("#p_nextArrow"),
                 });
                 
-                $('.album').slick({
+                $('.album-homepage').slick({
                     infinite: true,
                     slidesToShow: 8,
                     slidesToScroll: 2,
@@ -97,7 +97,7 @@
                     nextArrow: $("#alb_nextArrow"),
                 });
                 
-                $('.artist').slick({
+                $('.artist-homepage').slick({
                     infinite: true,
                     slidesToShow: 8,
                     slidesToScroll: 2,
