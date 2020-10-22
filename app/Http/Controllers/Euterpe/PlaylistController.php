@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Models\Music;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 
@@ -15,7 +16,9 @@ use App\Validators\AlbumValidator;
 use App\Validators\MusicValidator;
 use App\Validators\PlaylistValidator;
 use App\Validators\ValidationException;
+use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Validation\Validator;
 use \Prettus\Validator\LaravelValidator;
@@ -43,10 +46,10 @@ class PlaylistController extends Controller
     public function edit(Request $request){
         try{
             $this->authorize("create", User::class);
-            
             $playlist = Playlist::find($request->id);
             $input = $request->all();
-    
+            $input['user_id'] = $playlist->user_id;
+            $input['view'] = $playlist->view;
 
             
             if($request->has('icon') == true){
@@ -58,11 +61,11 @@ class PlaylistController extends Controller
             }
     
             PlaylistValidator::edit_validate($input);
-            
+
             $playlist->fill($input);
             $playlist->save();
     
-            return redirect('euterpe/playlist');
+            return Redirect::back();
     
             }catch(ValidationException $exception){
                 return redirect("euterpe/playlist/edit/".$request->id)->withErrors($exception->getValidator())->withInput();
@@ -84,7 +87,6 @@ class PlaylistController extends Controller
             $playlist = $request->all();
             $playlist['view'] = 0;
             $playlist['user_id'] = Auth::user()->id;
-
             //validating playlist data
             PlaylistValidator::validate($playlist);
             
@@ -123,10 +125,9 @@ class PlaylistController extends Controller
             foreach($data as $row){
                 $output .= '<div class="slide">
                 <div class="overlay">
-                <a href="playlist/edit/'.$row->id.'" class="button" id="playlist-edit"></a>
                 </div>
                 <img class="playlists" src="http://127.0.0.1:8000/storage/playlist/icon/'.$row->icon.'")}}">
-                <h2>'.$row->name.'</h2>
+                <a href="playlist/'.$row->id.'"class="playlist-name">'.$row->name.'</a>
                 </div>';
             }
 
@@ -141,11 +142,61 @@ class PlaylistController extends Controller
     }
 
     public function delete(Request $request){
+        $this->authorize("create", User::class);
         $playlist = Playlist::find($request->id);
+
+        foreach($playlist->music as $music){
+            $playlist->music()->detach($music->id);
+        }
         
         $playlist->delete();
         return redirect('euterpe/playlist');
     }
  
- 
+    public function add_music($playlist_id,$music_id){
+        try{
+            $this->authorize("create", User::class);
+
+
+            $playlist = Playlist::find($playlist_id);
+            $music = Music::find($music_id);
+
+            foreach($playlist->music as $p_music){
+                if($p_music->id == $music->id)
+                    throw new Exception("Error on playlist validation");
+            }
+            
+            $playlist->music = $music;
+            $playlist->music()->attach($music->id);
+    
+            return Redirect::back();
+        }catch(Exception $exception){
+            return  Redirect::back();
+        }
+    }
+
+    public function show_playlist($id){
+        $this->authorize("create", User::class);
+        $playlist = Playlist::find($id);
+        return view('euterpe.showPlaylist',['playlist' => $playlist]);
+        
+    }
+
+    public function remove_music($playlist_id,$music_id){  
+            $this->authorize("create", User::class);
+
+
+            $playlist = Playlist::find($playlist_id);
+            $music = Music::find($music_id);
+
+
+            
+            $playlist->music = $music;
+            $playlist->music()->detach($music->id);
+    
+            return Redirect::back();
+    }
+
+
+
 }

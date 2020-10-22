@@ -58,7 +58,7 @@ class ArtistController extends Controller
                 <a href="artist/edit/'.$row->id.'" class="button"></a>
                 </div>
                 <img class="artists" src="http://127.0.0.1:8000/storage/artist/icon/'.$row->icon.'")}}"> 
-                <h2>'.$row->name.'</h2>
+                <a href="artist/'.$row->id.'"class="artist-name">'.$row->name.'</a>
                 </div>';
             }
 
@@ -175,5 +175,13 @@ class ArtistController extends Controller
             return redirect("euterpe/artist/edit/".$request->id)->withErrors($exception->getValidator())->withInput();
         }
     }
+
+    public function show_artist($id){
+        $this->authorize("create", User::class);
+        $artist = Artist::find($id);
+        return view('euterpe.showArtist',['artist' => $artist]);
+        
+    }
+
  
 }
