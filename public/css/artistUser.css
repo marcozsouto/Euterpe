@@ -1,0 +1,174 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+           -box-sizing: border-box;
+    background-color: #141414;
+}
+
+div.box{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    width: calc(100% - 280px);
+    background-color: #141414;
+    height: calc(100% - 90px);
+    top: 90px;
+}
+
+.search::placeholder {
+    font-family: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #888888;
+}
+
+img.artists{
+    width: 200px;
+    height: 200px; 
+    margin-top:15px; 
+    margin-left:15px;
+    border-radius: 50%;
+}
+
+div.artists{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    width: calc(100% - 60px); 
+    height: calc(100% - 21%);
+    top: 21%;
+    display: flex;
+} 
+
+header{
+    width: calc(100% - 280px);
+    height: 90px;
+    right: 0px;
+    top: 0px;
+    background: #1F1F1F;
+    z-index: 5;
+    position: fixed;
+}
+
+div.new{
+    border-bottom: 0.1px solid #363636;
+    border-top: 0;
+    position: absolute;
+    width:  1550px;
+    right:  2%;
+    top: 14%;
+    z-index: 1;
+}
+
+h1{
+    position: relative;
+    font: 2.5em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 3.5%;
+    text-align: left;
+    background: none;
+    color: white;
+    width: 190px;
+    top: 70px;
+    z-index: 1;
+}
+
+a.artist-name:link,a.artist-name:visited {
+    width: 190px;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: left;
+    position: absolute;
+    left: 7.7%;
+    bottom: 5%;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+a.artist-name:hover{
+    text-decoration: underline;
+}
+
+div.slide{
+    width: 250px;
+    height: 250px;
+    position: relative;
+   
+}
+
+input[type=text] {
+    position: absolute;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    width:  1550px;
+    right:  2%;
+    top: 15%;
+    padding: 12px 20px;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+input[type=text]:focus {
+    opacity: 1;
+    background: #272727;
+    border: 1px solid #272727;
+    transition: 0.2s;
+}
+
+h2.error{
+    width: 800px;
+    font: 2.6em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #9C9C9C;
+    text-align: left;
+    position: relative;
+    left: 500px;
+    top: 250px;
+}
+
+.overlay{
+    position: absolute;
+    transition: all .3s ease;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 200px;
+    height: 200px; 
+    top: 15px;
+    left: 15px;
+    border-radius: 50%;
+}
+
+.overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+    
+}
+
+a.button{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position:49% 70%;
+    background-color: transparent;
+    top: 41%;
+    right: 37%;
+    display: inline-block;
+    background-color: rgba(192,192,192, 0.4);
+    background-image: url("img/heart.svg");
+}
+
+a.button:hover{
+    background-color: #E71D36; 
+}
+

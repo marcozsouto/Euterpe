@@ -72,7 +72,7 @@ Route::get('euterpe/playlist/new',['uses' => 'Euterpe\PlaylistController@form_eu
 Route::post('euterpe/playlist/new',['uses' => 'Euterpe\PlaylistController@create'])->name("euterpe.playlist.new.do");
     //edit
 Route::get('euterpe/playlist/edit/{id}',['uses' => 'Euterpe\PlaylistController@form_playlist_edit'])->name("euterpe.playlist.edit");
-Route::post('euterpe/playlist/edit',['uses' => 'Euterpe\PLaylistController@edit'])->name("euterpe.playlist.edit.do");
+Route::post('euterpe/playlist/edit',['uses' => 'Euterpe\PlaylistController@edit'])->name("euterpe.playlist.edit.do");
     //search
 Route::get('euterpe/playlist/search', 'Euterpe\PlaylistController@action')->name('euterpe.playlist.search.do');
     //delete
@@ -88,5 +88,31 @@ Route::get('euterpe/search', 'Euterpe\SearchController@action')->name('euterpe.s
 
 
 //USER ROUTES
-Route::get('/home', ['uses' => 'User\ControllerUser@homepage'])->name("home");
 
+    //home and side bar
+Route::get('home', ['uses' => 'User\UserController@home'])->name("home");
+Route::get('home/search', 'User\SearchController@action')->name('user.search.do');
+
+    //user playlist
+Route::get('home/playlist',['uses' => 'User\PlaylistController@form_user_playlist'])->name("user.playlist");
+Route::get('home/playlist/new',['uses' => 'User\PlaylistController@form_user_playlist_new'])->name("user.playlist.new");
+Route::post('home/playlist/new',['uses' => 'User\PlaylistController@create'])->name("user.playlist.new.do");
+Route::get('home/playlist/edit/{id}',['uses' => 'User\PlaylistController@form_playlist_edit'])->name("user.playlist.edit");
+Route::post('home/playlist/edit',['uses' => 'User\PlaylistController@edit'])->name("user.playlist.edit.do");
+Route::get('home/playlist/search', 'User\PlaylistController@action')->name('user.playlist.search.do');
+Route::get('home/playlist/delete/{id}',['uses' => 'User\PlaylistController@delete'])->name("user.playlist.delete");
+Route::get('home/playlist/add/{playlist_id}/{song_id}',['uses' => 'User\PlaylistController@add_music'])->name("user.playlist.add"); 
+Route::get('home/playlist/{id}', ['uses' => 'User\PlaylistController@show_playlist'])->name("user.playlist.show"); 
+Route::get('home/playlist/remove/{playlist_id}/{song_id}',['uses' => 'User\PlaylistController@remove_music'])->name("user.playlist.remove");    
+    //user artist
+Route::get('home/artist',['uses' => 'User\ArtistController@form_artist'])->name("user.artist");
+Route::get('home/artist/search', 'User\ArtistController@action')->name('user.artist.search.do');
+Route::get('home/artist/{id}', ['uses' => 'User\ArtistController@show_artist'])->name("user.artist.show");
+Route::get('home/artist/remove/{artist_id}',['uses' => 'User\ArtistController@remove_artist'])->name("user.artist.remove"); 
+Route::get('home/artist/add/{artist_id}',['uses' => 'User\ArtistController@add_artist'])->name("user.artist.add"); 
+    //user album
+Route::get('home/album',['uses' => 'User\AlbumController@form_album'])->name("user.album");
+Route::get('home/album/search', 'User\AlbumController@action')->name('user.album.search.do');
+Route::get('home/album/{id}', ['uses' => 'User\AlbumController@show_album'])->name("user.album.show");
+Route::get('home/album/remove/{album_id}',['uses' => 'User\AlbumController@remove_album'])->name("user.album.remove"); 
+Route::get('home/album/add/{album_id}',['uses' => 'User\AlbumController@add_album'])->name("user.album.add"); 

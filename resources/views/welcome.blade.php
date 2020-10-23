@@ -32,7 +32,7 @@
                     </a>
                 @endif
                 @if(Auth::check() and Auth::user()->username != "euterpe")
-                    <a href="{{ url('/foryou') }}">
+                    <a href="{{ url('/home') }}">
                         <button>{{Auth::user()->firstName()}}</button>
                     </a>    
                 @endif

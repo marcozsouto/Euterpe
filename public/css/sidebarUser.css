@@ -8,6 +8,20 @@ div.sidebar{
     z-index: 5;
 }
 
+.euterpe-btm{
+    position: absolute;
+    width: 130px;
+    top: 3.5%;
+    left: 5%;
+    text-align: left;
+    text-decoration: none;
+    font: 1.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .artist-create, .artist-btm, .album-create, .album-btm, .playlist-create, .playlist-btm{
     position: absolute;
     width: 240px;
@@ -22,40 +36,28 @@ div.sidebar{
 }
 
 .artist-btm{
-    top: 17%;
-    right: 30px;
+    top: 20%;
+    right: 20px;
     color: #5E5E5E;
 }
 
-.artist-create{
-    top: 20%;
-    right: 30px;
-    color: #5E5E5E;
-    padding-left: 1.5em;
-}
 
 .album-btm{
-    top: 28%;
-    right: 30px;
+    top: 23%;
+    right: 20px;
     color: #5E5E5E;
 }
 
-.album-create{
-    top: 31%;
-    right: 30px;
-    color: #5E5E5E;
-    padding-left: 1.5em;
-}
 
 .playlist-btm{
-    top: 38%;
-    right: 30px;
+    top: 26%;
+    right: 20px;
     color: #5E5E5E;
 }
 
 .playlist-create{
-    top: 41%;
-    right: 30px;
+    top: 31%;
+    right: 40px;
     color: #5E5E5E;
     padding-left: 1.5em;
 }
@@ -306,30 +308,14 @@ h2.error{
     top: 250px;
 }
 
-.logout-btm{
+.libray{
     position: absolute;
-    width: 60px;
-    left: 5%;
-    top: 50%;
+    width: 80px;
+    top: 18%;
+    left: 6%;
     text-align: left;
     text-decoration: none;
-    font: 0.8em 'Montserrat', sans-serif;
+    font: 1em 'Montserrat', sans-serif;
     font-weight: 700;
-    color: white;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.euterpe-btm{
-    position: absolute;
-    width: 130px;
-    top: 3.5%;
-    left: 5%;
-    text-align: left;
-    text-decoration: none;
-    font: 1.9em 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: white;
-    background-color: transparent;
-    cursor: pointer;
+    color: #ABABAB;
 }

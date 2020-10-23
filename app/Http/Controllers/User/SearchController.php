@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Euterpe;
+namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -71,7 +71,7 @@ class SearchController extends Controller
             foreach($artists as $artist){
                 $output .= '<div class = "search-artist">
                 <img class="search-artist-img" src="http://127.0.0.1:8000/storage/artist/icon/'.$artist->icon.'")}}"> 
-                <a href="/euterpe/artist/'.$artist->id.'"class="search-artist-name">'.$artist->name.'</a>
+                <a href="/home/artist/'.$artist->id.'"class="search-artist-name">'.$artist->name.'</a>
                 </div>';
             }
 
@@ -85,8 +85,8 @@ class SearchController extends Controller
             foreach($albums as $album){
                 $output .= '<div class = "search-album">
                 <img class="search-album-img" src="http://127.0.0.1:8000/storage/album/icon/'.$album->icon.'")}}"> 
-                <a href="/euterpe/album/'.$album->id.'"class="search-album-name">'.$album->name.'</a>
-                <a href="/euterpe/artist/'.$album->artist->id.'"class="search-album-artist-name">'.$album->artist->name.'</a>
+                <a href="/home/album/'.$album->id.'"class="search-album-name">'.$album->name.'</a>
+                <a href="/home/artist/'.$album->artist->id.'"class="search-album-artist-name">'.$album->artist->name.'</a>
                 </div>';
             }
 
@@ -101,8 +101,8 @@ class SearchController extends Controller
                 $output .= '<div class = "search-music">
                 <div class = "search-music-line" ></div>
                 <img class="search-music-img" src="http://127.0.0.1:8000/storage/album/icon/'.$music->album->icon.'")}}"> 
-                <a href="/euterpe/album/'.$music->album->id.'"class="search-music-name">'.$music->name.'</a>
-                <a href="/euterpe/artist/'.$music->album->artist->id.'"class="search-music-artist-name">'.$music->album->artist->name.'</a>
+                <a href="/home/album/'.$music->album->id.'"class="search-music-name">'.$music->name.'</a>
+                <a href="/home/artist/'.$music->album->artist->id.'"class="search-music-artist-name">'.$music->album->artist->name.'</a>
                 </div>';
             }
 

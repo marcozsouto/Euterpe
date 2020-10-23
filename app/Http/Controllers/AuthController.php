@@ -83,7 +83,7 @@ class AuthController extends Controller
             //redirectin created user
             $credentials = [
                 "username" =>$user["username"],
-                "password" =>$user["password"]
+                "password" =>$data["password"]
             ];
 
             Auth::attempt($credentials);

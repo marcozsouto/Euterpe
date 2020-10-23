@@ -1,33 +1,24 @@
-
-<link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
-@extends('euterpe.createPlaylist')
+<link rel="stylesheet" href="{{ asset('css/sidebarUser.css') }}">
+@extends('user.createPlaylist')
 <div class="sidebar">
         
         <input type="text" id="search_sidebar" class="search_sidebar" placeholder="Search"> 
 
-        <a href="/euterpe/artist">
-            <button class="artist-btm">ARTISTS</button>
-        </a>
-            <a href="/euterpe/artist/new">
-                <button class="artist-create">Create</button>
-            </a>
-        <a href="/euterpe/album">
-            <button class="album-btm">ALBUMS</button>
-        </a>
-            <a href="/euterpe/album/new">
-                <button class="album-create">Create</button>
-            </a>
-        <a href="/euterpe/playlist">
-        <button class="playlist-btm">PLAYLISTS</button>
-        </a>
-        <a href="/logout">
-        <button class="logout-btm">Log out</button>
-        </a>
-        <a href="/euterpe">
+        <a href="/home">
             <button class="euterpe-btm">Euterpe</button>
         </a>
+        <h1 class="libray">LIBRAY</h1>
+        <a href="/home/artist">
+            <button class="artist-btm">Artists</button>
+        </a>
+        <a href="/home/album">
+            <button class="album-btm">Albums</button>
+        </a>
+        <a href="/home/playlist">
+        <button class="playlist-btm">Playlists</button>
+        </a>
             
-        <button  id ="playlist-create" class="playlist-create">Create</button>
+        <button  id ="playlist-create" class="playlist-create">New Playlist</button>
             
 </div>        
 
@@ -37,14 +28,15 @@
 
 <script type="text/javascript">
 
+            
                 $(document).on('click','.open_modal',function(){
-                    var url = "euterpe/playlist/new";
+                    var url = "home/playlist/new";
                     var tour_id= $(this).val(); 
                 });
     
                 function fetch_customer_data(query){
                     $.ajax({
-                        url:"{{ route('euterpe.search.do') }}",
+                        url:"{{ route('user.search.do') }}",
                         method:'GET',
                         data:{query:query},
                         dataType:'json',
@@ -67,5 +59,5 @@
                     fetch_customer_data(query);
                     
                 });
-           
+
 </script>

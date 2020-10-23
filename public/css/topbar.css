@@ -1,0 +1,160 @@
+.topbar{
+    width: calc(100% - 280px);
+    height: 90px;
+    right: 0px;
+    top: 0px;
+    background: #1F1F1F;
+    z-index: 5;
+    position: fixed;
+}
+
+.user-icon{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    right: 2%;
+    top: 10px;
+}
+.icon-overlay{
+    position: absolute;
+    opacity: 0;
+    width: 70px;
+    height: 70px; 
+    top: 10px;
+    right: 2%;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all .3s ease;  
+}
+
+.icon-overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.logout-btm{
+    position: absolute;
+    width: 60px;
+    right: 5%;
+    top: 40%;
+    text-align: left;
+    text-decoration: none;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.music-player{
+    position: absolute;
+    height: 100%;
+    width: 1100px;
+    left: 5px;
+    background-color: transparent;
+}
+
+.music-icon-play{
+    position: absolute;
+    height: 89px;
+    width: 89px;
+    border-radius: 3px;
+    left: 0;
+    top: 1px;
+}
+
+.music-name-play, .music-artist-play{
+    position: absolute;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 92px;
+    color: #ABABAB;
+    width: 300px;
+}
+
+.music-name-play{
+    top: 35%;
+}
+
+.music-artist-play{
+    font-weight: 600;
+    top: 57%;
+}
+
+.player{
+    position: absolute;
+    width: 320px;
+    height: 100%;
+    left: 50%;
+    background-color: transparent;
+}
+.play-music{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position:60% 50%;
+    background-color: transparent;
+    top: 27.5px;
+    left: calc(160px - 17.5px);
+    display: inline-block;
+    background-image: url("img/play.svg");
+    display: inline;
+    cursor: pointer;
+}
+
+
+#progress-bar {
+    -webkit-appearance: none;
+    width: 320px;
+    height: 3px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 1;
+    position: absolute;
+    bottom: 7%;
+    left: 0;
+    draga
+}
+ 
+  
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+  
+#progress-bar::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+div.durationTime, div.currentTime{
+    position: absolute;
+    font: 0.77em 'Montserrat', sans-serif;
+    font-weight: 700;
+    bottom: 16px;
+    color: #ABABAB;
+    width: 30px;
+    background-color: transparent;
+}
+
+div.currentTime{
+    left: 0%;
+}
+
+div.durationTime{
+    right: 0%;
+}

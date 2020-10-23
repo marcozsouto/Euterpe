@@ -1,0 +1,293 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+           -box-sizing: border-box;
+}
+
+div.box1{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    width: calc(100% - 280px);
+    background-color: #141414;
+    height: calc(100% - 90px);
+    top: 90px;
+}
+
+
+div.playlist-homepage{
+    top:19%;
+
+}
+
+div.album-homepage{
+    top:48%;
+
+}
+
+div.artist-homepage{
+    top:77%;
+
+}
+
+header{
+    width: calc(100% - 280px);
+    height: 90px;
+    right: 0px;
+    top: 0px;
+    background: #1F1F1F;
+    z-index: 5;
+    position: fixed;
+}
+
+.welcome{
+    width: 500px;
+    font: 2.2em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    position: absolute;
+    left: 2%;
+    text-align: left;
+    top: 3%;
+}
+
+.Albums-homepage, .Playlists-homepage, .Artists-homepage{
+    width: 130px;
+    font: 1.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    background-color: transparent;
+    text-align: center;
+    position: absolute;
+    left: 2%;
+    text-align: left;
+    
+}
+
+.Playlists-homepage{
+    top: 13.5%;
+}
+
+.Artists-homepage{
+    top: 72%;
+    
+}
+
+.Albums-homepage{
+    top: 43%;
+}
+
+.Playlists-homepage:hover, .Albums-homepage:hover, .Artists-homepage:hover{
+    color: #F05E54;
+    cursor: pointer;
+}
+
+.img-homepage{
+    width: 150px;
+    height: 150px; 
+    margin-top:15px; 
+    margin-left:15px;
+    border-radius: 10px;
+    top: 0.5%;
+}
+
+#nextArrow{  
+    background-image: url("img/right-arrow.svg");
+    background-repeat: no-repeat;
+    left: 97%;
+}
+
+#prevArrow{
+    background-image: url("img/left-arrow.svg");
+    left: 95.5%;    
+}
+
+div.Arrow{
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor:pointer;
+    border: none;
+    width: 25px;
+    height: 25px;
+    top:31.5%;
+}
+
+img.albums-homepage, img.playlists-homepage{
+    width: 150px;
+    height: 150px; 
+    margin-top:15px; 
+    margin-left:35px;
+    border-radius: 5px;
+}
+
+img.artists-homepage{
+    border-radius: 100px;
+    margin-left:35px;
+    width: 150px;
+    height: 150px; 
+    margin-top:15px; 
+}
+
+div.album-homepage, div.playlist-homepage, div.artist-homepage{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    width: 100%; 
+    height: 200px;
+    display: flex;
+}
+
+div.slick-list.draggable{
+    position: relative;
+    top: 0;
+    max-width: 100%;
+    height: 200px;
+    width: 100%;
+    height: 0px;
+}
+
+div.slick-track{
+    max-width: 100%;
+    
+    left: 0px;
+    position: relative;
+    display: flex;
+}
+
+
+
+#alb_nextArrow{  
+    background-image: url("img/right-arrow.svg");
+    background-repeat: no-repeat;
+    left: 96%;
+    top: 43%; 
+}
+
+#alb_prevArrow{
+    background-image: url("img/left-arrow.svg");
+    left: 94.5%;
+    top: 43%;    
+}
+
+#art_nextArrow{  
+    background-image: url("img/right-arrow.svg");
+    background-repeat: no-repeat;
+    left: 96%;
+    top:72%;  
+}
+
+#art_prevArrow{
+    background-image: url("img/left-arrow.svg");
+    left: 94.5%;
+    top:72%;    
+}
+
+#p_nextArrow{  
+    background-image: url("img/right-arrow.svg");
+    background-repeat: no-repeat;
+    left: 96%;
+    top:14%;
+}
+
+#p_prevArrow{
+    background-image: url("img/left-arrow.svg");
+    left: 94.5%;
+    top:14%;    
+}
+
+div.line-home{
+    border-bottom: 0.1px solid #363636;
+    border-top: 0;
+    position: absolute;
+    width:  96%;
+    right:  2.2%;
+    z-index: 4;
+}
+
+
+div.line-home#home{
+    top: 9%;
+    border-bottom: 0.1px solid #212121;
+}
+
+
+div.line-home#album{
+    top: 47%;
+}
+
+div.line-home#playlist{
+    top: 18%;
+}
+
+div.line-home#artist{
+    top: 76%;
+}
+
+div.Arrow{
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor:pointer;
+    border: none;
+    width: 25px;
+    height: 25px;
+}
+
+.playlist-homepage-user:link, .playlist-homepage-user:visited{
+    width: 150px;
+    height: 20px;
+    font: 0.7em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: left;
+    position: absolute;
+    left: 18%;
+    bottom: 6%;
+    text-decoration: none;
+}
+
+.playlist-homepage-user:hover{
+    text-decoration: underline;
+}
+
+h2.albums-homepage{
+    width: 150px;
+    height: 20px;
+    font: 0.7em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: left;
+    position: absolute;
+    left: 18%;
+}
+
+
+h2.artist-homepage{
+    width: 150px;
+    height: 20px;
+    font: 0.7em 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ABABAB;
+    text-align: center;
+    position: absolute;
+    left: 17.5%;
+}
+
+div.slide-homepage{
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+}

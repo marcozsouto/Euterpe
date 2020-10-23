@@ -1,0 +1,294 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+           -box-sizing: border-box;
+    
+}
+
+header{
+    width: calc(100% - 280px);
+    height: 90px;
+    right: 0px;
+    top: 0px;
+    background: #1F1F1F;
+    z-index: 5;
+    position: fixed;
+}
+
+.box-1{
+    position: absolute;
+    right: 0;
+    top: 90px;
+    background-color: #141414;
+    width: calc(100% - 280px);
+    height: calc(100% - 90px);
+}
+
+.playlist-icon-overlay{
+    position: absolute;
+    transition: all .3s ease;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 360px;
+    height: 360px; 
+    top: 68px;
+    left: 101px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.playlist-icon-overlay:hover{
+    opacity: 1;
+}
+
+button.playlist-edit{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    background-color: transparent;
+    top: 40%;
+    right: 41%;
+    display: inline-block;
+    background-color: rgba(192,192,192, 0.4);
+    background-image: url("img/edit-playlist.svg");
+}
+
+button.playlist-edit:hover{
+    background-color: #F05E54; 
+    cursor: pointer;
+}
+
+.playlist-icon{
+    width: 360px;
+    height: 360px; 
+    margin-top:15px; 
+    margin-left:35px;
+    border-radius: 10px;
+    position: absolute;
+    top: 6%;
+    left: 4%;
+}
+
+.playlist-name{
+    position: absolute;
+    font: 2.4em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 30%;
+    text-align: left;
+    background: none;
+    color: white;
+    width: 800px;
+    top: 7.6%;
+    z-index: 1;
+}
+
+.playlist-user-name{
+    position: absolute;
+    font: 1.3em 'Montserrat', sans-serif;
+    font-weight: 600;
+    left: 30%;
+    text-align: left;
+    background: none;
+    color: #F05E54;
+    width: 800px;
+    top: 13.8%;
+    z-index: 1;
+
+}
+
+.playlist-description{
+    position: absolute;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 600;
+    left: 6%;
+    text-align: left;
+    background: none;
+    color: #D6D6D6;
+    width: 360px;
+    height: 200px;
+    top: 51%;
+}
+
+.play{
+    position: absolute;
+    left: 30%;
+    top: 18%;
+    width: 100px;
+    border: 2px solid #F05E54;
+    border-radius: 10px;
+    font: 1em 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 700;
+    height: 35px;
+    text-align: center;
+    line-height: 25%;
+    cursor: pointer;
+    background: #F05E54;
+    cursor: pointer;
+}
+
+.playlist-line{
+    position: absolute;
+    border-bottom: 0.1px solid#363636;
+    border-top: 0;
+    position: absolute;
+    width:  67%;
+    right: 3%;
+    top: 23.2%;   
+}
+
+.playlist-song, .playlist-album{
+    position: absolute;
+    font: 0.9em 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    background: none;
+    color: #676767;
+    width: 410px;
+    height: 200px;
+    top: 23.8%;
+}
+
+.playlist-song{
+    left: 30.2%;
+}
+
+.playlist-album{
+    left: 60%;
+}
+
+.playlist-line-2{
+    position: absolute;
+    border-bottom: 0.1px solid#363636;
+    border-top: 0;
+    position: absolute;
+    width:  67%;
+    right: 3%;
+    top: 26.2%;   
+}
+
+.playlist-musics{
+    position: absolute;
+    width: 1100px;
+    left: 30%;
+    top: 26.4%;
+    height: calc(100% - 26.4%);
+}
+
+.musics{
+    position: relative;   
+    width: 100%;
+    height: 50px;
+}
+
+.playlist-music-icon{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 3px;
+    top: 2%;
+}
+
+.playlist-music-name{
+    position: absolute;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 5%;
+    text-align: left;
+    background: none;
+    color: #D6D6D6;
+    width: 300px;
+    top: 10%;   
+}
+
+.playlist-music-artist-name{
+    position: absolute;
+    font: 0.7em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 5%;
+    text-align: left;
+    background: none;
+    color: #F05E54;
+    width: 300px;
+    top: 45%;   
+}
+
+.playlist-music-album-name{
+    position: absolute;
+    font: 0.8em 'Montserrat', sans-serif;
+    font-weight: 700;
+    left: 50.5%;
+    text-align: left;
+    background: none;
+    color: #F05E54;
+    width: 300px;
+    top: 35%; 
+}
+
+.music-playlist-line{
+    border-bottom: 0.1px solid#363636;
+    border-top: 0;
+    position: absolute;
+    width:  100%;
+    right: 0;
+    bottom: 0%;
+}
+
+.musics:hover{
+    background-color: #272727;
+}
+
+.musics:hover > .play-music-playlist{
+    z-index: 4;
+    display: inline;
+    
+}
+
+.play-music-playlist{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position:60% 50%;
+    background-color:#ABABAB;
+    top: 24%;
+    left: 1.4%;
+    display: inline-block;
+    background-image: url("img/play.svg");
+    display: none;
+    cursor: pointer;
+    z-index: -1;
+}
+
+
+a.remove-to-playlist{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    top: 30%;
+    right: 5%;
+    display: none;
+    background-image: url("img/delete.svg");
+}
+
+.musics:hover >a.remove-to-playlist{
+    cursor: pointer;
+    display: inline-block; 
+
+}

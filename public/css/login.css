@@ -63,7 +63,7 @@ input[type=submit]{
     float: left;
     display: block;
     bottom: 0;
-    right: 50px;
+    right: 0px;
     padding: 10px 50px;
     box-sizing: border-box;
     border: 1px solid #2D2D2D;

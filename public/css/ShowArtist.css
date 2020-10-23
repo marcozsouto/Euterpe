@@ -164,3 +164,23 @@ div.slick-track{
     position: relative;
     display: flex;
 }
+
+a.button-add-to-user{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position:50% 65%;
+    background-color: transparent;
+    top: 35%;
+    right: 2%;
+    display: inline-block;
+    background-color: rgba(192,192,192, 0.4);
+    background-image: url("img/heart.svg");
+}
+
+a.button-add-to-user:hover{
+    background-color: #F05E54; 
+}

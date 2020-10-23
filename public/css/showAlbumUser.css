@@ -145,8 +145,28 @@ header{
     cursor: pointer;
 }
 
-.musics:hover > .index{
+.musics:hover > .play-music-album{
+    z-index: 4;
+    display: inline;
     
+}
+
+.play-music-album{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position:60% 50%;
+    background-color:#ABABAB;
+    top: 24%;
+    left: 1.4%;
+    display: inline-block;
+    background-image: url("img/play.svg");
+    display: none;
+    cursor: pointer;
+    z-index: -1;
 }
 
 .index{
@@ -160,6 +180,8 @@ header{
     width: 40px;
     top: 24%;
 }
+
+
 
 .music-name{
     position: absolute;
